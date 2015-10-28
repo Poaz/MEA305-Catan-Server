@@ -1,65 +1,71 @@
 package com.company;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.SocketException;
+import java.io.*;
+import java.net.*;
 
 
 public class Main {
 
     static byte[] data = new byte[1024];
 
-    public static void main(String[] args)  {
-        //UDP
+    public static void main(String[] args) {
 
+        //Dice rolling
+        Dice dice = new Dice();
+        //Dice prints
+        System.out.println("Dice 1 = " + dice.getDie1());
+        System.out.println("Dice 2 = " + dice.getDie2());
+        System.out.println("Total = " + dice.getTotal());
 
-        DatagramSocket sock = null;
+        // TCP Server side
 
+        ServerSocket socket = null; // Set up receive socket
         try {
-
-            sock = new DatagramSocket(2000);
-
-            while(true) {
-                DatagramPacket pack = new DatagramPacket(data, 1024);
-                sock.receive(pack);
-
-                String receivedMessage = new String(pack.getData());
-
-
-                if(receivedMessage.trim().equalsIgnoreCase("quit"));
-
-                System.out.println(new String(pack.getData()));
-                break;
-            }
-
-            sock.close();
-
-        } catch (SocketException e) {
-            e.printStackTrace();
+            ServerSocket socket = null;
+            socket = new ServerSocket(3333);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        DataInputStream dIn = null;
+        try {
+            dIn = new DataInputStream(socket.getInputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        //TCP
-        //ServerSocket(2000);
-        //accept();
-        //getInputStream();
+        boolean done = false;
+        while(!done) {
 
 
-        //BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+                    try {
+                        byte messageType = dIn.readByte();
+                        switch (messageType) {
+                            case 1: // Type A
+                                System.out.println("Message A: " + dIn.readUTF());
+                                break;
+                            case 2: // Type B
+                                System.out.println("Message B: " + dIn.readUTF());
+                                break;
+                            case 3: // Type C
+                                System.out.println("Message C [1]: " + dIn.readUTF());
+                                System.out.println("Message C [2]: " + dIn.readUTF());
+                                break;
+                                    default:
+                                        done = true;
+                        }
 
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+            try {
+                dIn.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        }
     }
 
-    private static void getInputStream() {
-    }
-
-    private static void accept() {
-    }
-
-    private static void ServerSocket(int i) {
-    }
-}

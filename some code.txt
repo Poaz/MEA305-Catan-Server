@@ -1,0 +1,70 @@
+        //Send
+        Socket socket = null;
+        try {
+            socket = new Socket("Data", 2000);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        OutputStream socketOutputStream = null;
+        try {
+            socketOutputStream = socket.getOutputStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            socketOutputStream.write(dice.getTotal());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        /*
+        //UDP - Receive
+        DatagramSocket sock = null;
+
+        try {
+
+            sock = new DatagramSocket(2000);
+
+            while (true) {
+                DatagramPacket pack = new DatagramPacket(data, 1024);
+                sock.receive(pack);
+                //sock.send();
+
+                String receivedMessage = new String(pack.getData());
+
+
+                if (receivedMessage.trim().equalsIgnoreCase("quit")) ;
+
+                System.out.println(new String(pack.getData()));
+                break;
+            }
+
+            sock.close();
+
+        } catch (SocketException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //TCP
+
+        /*
+
+        ServerSocket(2000);
+        accept();
+        getInputStream();
+
+        BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+
+        */
+    }
+
+    private static void getInputStream() {
+    }
+
+    private static void accept() {
+    }
+
+    private static void ServerSocket(int i) {
+    }
