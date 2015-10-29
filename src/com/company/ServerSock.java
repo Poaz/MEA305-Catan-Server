@@ -10,8 +10,8 @@ public class ServerSock {
 
     public void run() throws IOException {
 
-        // Opens server socket on port 444
-        ServerSocket SRVSock = new ServerSocket(1337);
+        // Opens server socket on port 1337
+        ServerSocket SRVSock = new ServerSocket(444);
 
         //Setting the server socket to a socket
         Socket sock = SRVSock.accept();

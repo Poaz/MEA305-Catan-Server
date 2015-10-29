@@ -20,7 +20,7 @@ public class ClientSock {
 
     public void run()throws Exception {
 
-        Socket sock = new Socket("localhost",1337);
+        Socket sock = new Socket("localhost",444);
         PrintStream PS = new PrintStream(sock.getOutputStream());
         PS.println("Hello, server!");
 
