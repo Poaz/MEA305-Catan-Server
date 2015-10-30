@@ -50,5 +50,5 @@ public class Card {
         cards.remove(0);
         System.out.println(a);
         return a;
-    }
+    } //hullaa
 }
