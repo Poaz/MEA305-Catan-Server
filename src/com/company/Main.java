@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import java.io.*;
 import java.net.*;
 
@@ -21,10 +22,9 @@ public class Main {
         ServerSock server = new ServerSock();
         server.run();
 
-        //hello
-
-        //Chat Server
-
+        //Key listener for server shutdown
+        JTextField component = new JTextField();
+        component.addKeyListener(new ClientSock());
 
         }
     }

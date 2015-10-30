@@ -1,10 +1,16 @@
 package com.company;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.*;
 import java.net.*;
 
-public class ServerSock {
+public class ServerSock extends KeyAdapter {
 
-    ServerSock(){
+    BufferedReader BR;
+    Socket sock;
+    boolean Running = true;
+
+    ServerSock() {
 
     }
 
@@ -14,26 +20,40 @@ public class ServerSock {
         ServerSocket SRVSock = new ServerSocket(444);
 
         //Setting the server socket to a socket
-        Socket sock = SRVSock.accept();
+        sock = SRVSock.accept();
 
         //InputStreamReader
         InputStreamReader IR = new InputStreamReader(sock.getInputStream());
 
         //BufferedReader
-        BufferedReader BR = new BufferedReader(IR);
+        BR = new BufferedReader(IR);
 
+        while (Running) {
 
-        //Setting the message to a String and print
-        String message = BR.readLine();
-        System.out.println(message);
+            //Setting the message to a String and print
+            String message = BR.readLine();
+            System.out.println(message);
 
-        // Message received - Going to Client
-        if(message != null) {
-            PrintStream PS = new PrintStream(sock.getOutputStream());
-            PS.println("Message Received");
+            // Message received - Going to Client
+            if (message != null) {
+                PrintStream PS = new PrintStream(sock.getOutputStream());
+                PS.println("Message Received");
+            }
+
+            if (message == "quit") {
+                Running = false;
+            }
         }
-
     }
 
+    public void keyPressed(KeyEvent e) {
 
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+        }
+
+        if (e.getKeyChar() == 'Q') {
+            System.out.println("Check for key characters: " + e.getKeyChar());
+        }
+    }
 }
+
