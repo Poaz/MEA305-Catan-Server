@@ -1,12 +1,15 @@
 package com.company;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.*;
 import java.net.*;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 
 public class Main {
-
 
 
     public static void main(String[] args) throws Exception {
@@ -26,6 +29,8 @@ public class Main {
         JTextField component = new JTextField();
         component.addKeyListener(new ClientSock());
 
-        }
+
     }
+}
+
 
