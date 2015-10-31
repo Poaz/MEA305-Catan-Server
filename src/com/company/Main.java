@@ -1,36 +1,41 @@
 package com.company;
-
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.*;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+public class Main extends JPanel{
 
-public class Main {
 
 
     public static void main(String[] args) throws Exception {
 
+        GUI gui = new GUI() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        };
+
         //Dice rolling
         Dice dice = new Dice();
+
         //Dice prints
         System.out.println("Dice 1 = " + dice.getDie1());
         System.out.println("Dice 2 = " + dice.getDie2());
         System.out.println("Total = " + dice.getTotal());
 
-        //Server TCP
-        ServerSock server = new ServerSock();
-        server.run();
 
-        //Key listener for server shutdown
-        JTextField component = new JTextField();
-        component.addKeyListener(new ClientSock());
+        while (true) {
 
-
+            }
+        }
     }
-}
+
 
 

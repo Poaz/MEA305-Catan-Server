@@ -31,6 +31,10 @@ public class ClientSock  extends KeyAdapter {
         PrintStream PS = new PrintStream(sock.getOutputStream());
         PS.println("Hello, server!");
 
+        //Testing things
+        PS.println("card");
+
+
         InputStreamReader IR = new InputStreamReader(sock.getInputStream());
         BufferedReader BR = new BufferedReader(IR);
 
