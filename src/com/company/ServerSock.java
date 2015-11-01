@@ -44,6 +44,8 @@ public class ServerSock extends KeyAdapter {
             if (message != null) {
                 PrintStream PS = new PrintStream(sock.getOutputStream());
                 PS.println("Message Received");
+            //    ServerThread st=new ServerThread(sock);
+            //    st.start();
             }
 
 
