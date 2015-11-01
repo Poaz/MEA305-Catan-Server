@@ -22,6 +22,9 @@ public class Main extends JPanel{
             }
         };
 
+        //Playerstat creation
+        PlayerStats player1 = new PlayerStats(0,"Thomas");
+
         //Dice rolling
         Dice dice = new Dice();
 

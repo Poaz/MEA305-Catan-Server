@@ -1,7 +1,17 @@
 package com.company;
 
-/**
- * Created by Dines on 27-10-2015.
- */
+
 public class Lobby {
+
+
+    //skal stå i serversock
+    /*
+    Lobby lobby = new Lobby;
+    lobby.startgame();
+    */
+
+    public void startgame(){
+
+    }
+
 }
