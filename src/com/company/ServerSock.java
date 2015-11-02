@@ -67,7 +67,7 @@ public class ServerSock extends KeyAdapter {
         //Users.add(userName);
         PlayerStats tempplayer = new PlayerStats();
         tempplayer.setName(userName);
-        tempplayer.setID(ID_);
+        tempplayer.setID(givenID);
         givenID++;
         Players.add(tempplayer);
         for (int i = 0; i < Players.size(); i++) {
