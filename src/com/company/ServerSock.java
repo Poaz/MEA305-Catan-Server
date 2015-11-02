@@ -11,7 +11,7 @@ public class ServerSock extends KeyAdapter {
     boolean Running = true;
     Card card = new Card();
     public static ArrayList<Socket> SocketArray = new ArrayList<Socket>();
-    //public static ArrayList<String> Users = new ArrayList<String>();
+    public static ArrayList<String> Users = new ArrayList<String>();
     ServerSock() {
 
     }

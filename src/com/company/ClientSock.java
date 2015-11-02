@@ -9,6 +9,8 @@ import java.net.*;
 
 public class ClientSock  extends KeyAdapter {
 
+    int ID = 23;
+    String nickName = "Zilen";
     ClientSock(){
 
     }
@@ -29,7 +31,7 @@ public class ClientSock  extends KeyAdapter {
 
         Socket sock = new Socket("localhost", 444);
         PrintStream PS = new PrintStream(sock.getOutputStream());
-        PS.println("Hello, server!");
+        PS.println(nickName);
 
         //Testing things
         PS.println("card");
