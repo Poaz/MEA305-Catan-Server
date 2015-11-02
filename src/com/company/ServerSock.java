@@ -63,11 +63,11 @@ public class ServerSock extends KeyAdapter {
     public static void AddUserName(Socket X) throws IOException {
         Scanner input = new Scanner(X.getInputStream());
         String userName = input.nextLine();
+        String ID_ = input.nextLine();
         //Users.add(userName);
         PlayerStats tempplayer = new PlayerStats();
         tempplayer.setName(userName);
-
-        tempplayer.setID(givenID);
+        tempplayer.setID(ID_);
         givenID++;
         Players.add(tempplayer);
         for (int i = 0; i < Players.size(); i++) {

@@ -32,6 +32,7 @@ public class ClientSock  extends KeyAdapter {
         Socket sock = new Socket("localhost", 444);
         PrintStream PS = new PrintStream(sock.getOutputStream());
         PS.println(nickName);
+        PS.println(ID);
 
         //Testing things
         PS.println("card");
