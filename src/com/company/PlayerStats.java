@@ -3,12 +3,16 @@ package com.company;
 
 public class PlayerStats {
 
-    int ID;
-    String Name;
+   public int ID;
+   public String Name;
     int point = 0;
     int knights_played = 0;
     int length_of_road = 0;
     int resources_on_hand = 0;
+
+    PlayerStats(){
+
+    }
 
     public void updateplayerstats(int additional_points, int additional_knights, int current_length_of_road, int current_resources_on_hand){
         point = point+additional_points;
@@ -17,7 +21,6 @@ public class PlayerStats {
         resources_on_hand = current_resources_on_hand;
 
     }
-
 
     public boolean checkpointstoseeifwin(){
 

@@ -11,17 +11,15 @@ public class ServerSock extends KeyAdapter {
     BufferedReader BR;
     boolean Running = true;
     Card card = new Card();
-    PlayerStats Player = new PlayerStats()
+    //PlayerStats Player = new PlayerStats();
 
     public static ArrayList<Socket> SocketArray = new ArrayList<Socket>();
     //public static ArrayList<String> Users = new ArrayList<String>();
     public static ArrayList<PlayerStats> Players = new ArrayList<PlayerStats>();
-    PlayerStats tempplayer = new PlayerStats();
-    tempplayer.setName("Rey");
-    tempplayer.setID(0);
-    Players.add(tempplayer);
+    static int givenID = 100;
 
-    System.out.println(StudentList.get(0).getName()+", "+StudentList.get(0).getId());
+
+    //System.out.println(StudentList.get(0).getName()+", "+StudentList.get(0).getId());
 
     ServerSock() {
 
@@ -41,8 +39,6 @@ public class ServerSock extends KeyAdapter {
             BR = new BufferedReader(IR);
 
             AddUserName(sock);
-            System.out.println(Users);
-
 
             System.out.println("Client is connected from: " + sock.getLocalAddress().getHostName());
             //Setting the message to a String and print
@@ -67,7 +63,18 @@ public class ServerSock extends KeyAdapter {
     public static void AddUserName(Socket X) throws IOException {
         Scanner input = new Scanner(X.getInputStream());
         String userName = input.nextLine();
-        Users.add(userName);
+        //Users.add(userName);
+        PlayerStats tempplayer = new PlayerStats();
+        tempplayer.setName(userName);
+
+        tempplayer.setID(givenID);
+        givenID++;
+        Players.add(tempplayer);
+        for (int i = 0; i < Players.size(); i++) {
+            System.out.println(Players.get(i).Name);
+            System.out.println(Players.get(i).ID);
+        }
+
 
 
 
