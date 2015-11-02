@@ -40,7 +40,9 @@ public class Card {
         cards.add("vPCatherdral");
         //System.out.println(cards.get(20)); //Checks if cards are there.
         Collections.shuffle(cards);
-        //System.out.println(cards.get(0)); //Checks if cards get shuffled.
+        /*for(int k = 0; k<20;k++){
+            System.out.println(cards.get(k));
+        }//Checks if cards get shuffled.*/
 
         System.out.println(cards.get(20)); //Checks if cards are there.
     }
@@ -50,5 +52,5 @@ public class Card {
         cards.remove(0);
         System.out.println(a);
         return a;
-    } //hullaa
+    }
 }
