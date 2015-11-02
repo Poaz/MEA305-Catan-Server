@@ -10,12 +10,6 @@ public class PlayerStats {
     int length_of_road = 0;
     int resources_on_hand = 0;
 
-    PlayerStats(int _id, String _Name){
-
-    }
-
-
-
     public void updateplayerstats(int additional_points, int additional_knights, int current_length_of_road, int current_resources_on_hand){
         point = point+additional_points;
         knights_played = knights_played+additional_knights;
@@ -31,6 +25,19 @@ public class PlayerStats {
     }
 
 
+    public int getID() {
+        return ID;
+    }
 
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
 }

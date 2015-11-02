@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ae1b3ad-9e5b-4b3f-8ba9-a5d79d3e4f32" name="Default" comment="server with multiple clients now working!!!">
+    <list default="true" id="5ae1b3ad-9e5b-4b3f-8ba9-a5d79d3e4f32" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/Card.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/Card.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ClientSock.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ClientSock.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ServerSock.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ServerSock.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ClientSock.java" afterPath="$PROJECT_DIR$/src/com/company/ClientSock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/PlayerStats.java" afterPath="$PROJECT_DIR$/src/com/company/PlayerStats.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ServerSock.java" afterPath="$PROJECT_DIR$/src/com/company/ServerSock.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -53,12 +56,12 @@
       <file leaf-file-name="ServerSock.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/ServerSock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42236024">
-              <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.3519669">
+              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#341#349#0" expanded="true" />
-                <element signature="e#410#418#0" expanded="true" />
+                <element signature="e#411#419#0" expanded="true" />
+                <element signature="e#558#571#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/ClientSock.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+              <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/ChatServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -90,8 +93,17 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/PlayerStats.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+              <folding>
+                <element signature="e#639#640#0" expanded="true" />
+                <element signature="e#664#665#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#725#726#0" expanded="true" />
+                <element signature="e#756#757#0" expanded="true" />
+                <element signature="e#783#784#0" expanded="true" />
+                <element signature="e#823#824#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,12 +137,12 @@
         <option value="$PROJECT_DIR$/src/com/company/Dice.java" />
         <option value="$PROJECT_DIR$/src/com/company/Clicked.java" />
         <option value="$PROJECT_DIR$/src/com/company/GUI.java" />
-        <option value="$PROJECT_DIR$/src/com/company/PlayerStats.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Lobby.java" />
         <option value="$PROJECT_DIR$/src/com/company/ServerThread.java" />
-        <option value="$PROJECT_DIR$/src/com/company/ChatServer.java" />
         <option value="$PROJECT_DIR$/src/com/company/ClientSock.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ChatServer.java" />
+        <option value="$PROJECT_DIR$/src/com/company/PlayerStats.java" />
         <option value="$PROJECT_DIR$/src/com/company/ServerSock.java" />
       </list>
     </option>
@@ -533,7 +545,7 @@
       <workItem from="1446198770629" duration="1415000" />
       <workItem from="1446371001530" duration="9288000" />
       <workItem from="1446380528181" duration="12115000" />
-      <workItem from="1446451517268" duration="6226000" />
+      <workItem from="1446451517268" duration="11460000" />
     </task>
     <task id="LOCAL-00001" summary="Server and GUI">
       <created>1446311622858</created>
@@ -547,11 +559,17 @@
       <option name="project" value="LOCAL" />
       <updated>1446455699158</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="not much new">
+      <created>1446457817442</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1446457817442</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37753000" />
+    <option name="totallyTimeSpent" value="42987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -600,7 +618,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Server and GUI" />
     <MESSAGE value="server with multiple clients now working!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="server with multiple clients now working!!!" />
+    <MESSAGE value="not much new" />
+    <option name="LAST_COMMIT_MESSAGE" value="not much new" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -627,8 +646,8 @@
           <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#341#349#0" expanded="true" />
-            <element signature="e#410#418#0" expanded="true" />
+            <element signature="e#411#419#0" expanded="true" />
+            <element signature="e#558#571#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -708,8 +727,8 @@
           <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#341#349#0" expanded="true" />
-            <element signature="e#410#418#0" expanded="true" />
+            <element signature="e#411#419#0" expanded="true" />
+            <element signature="e#558#571#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -773,8 +792,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#341#349#0" expanded="true" />
-            <element signature="e#410#418#0" expanded="true" />
+            <element signature="e#411#419#0" expanded="true" />
+            <element signature="e#558#571#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1017,6 +1036,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/TurnOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17598344">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1027,10 +1054,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ClientSock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ChatServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -1038,37 +1075,28 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/PlayerStats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ClientSock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#664#665#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/TurnOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17598344">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ServerSock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42236024">
-          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.3519669">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#341#349#0" expanded="true" />
-            <element signature="e#410#418#0" expanded="true" />
+            <element signature="e#411#419#0" expanded="true" />
+            <element signature="e#558#571#0" expanded="true" />
           </folding>
         </state>
       </provider>

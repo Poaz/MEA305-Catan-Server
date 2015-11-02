@@ -4,14 +4,25 @@ import java.awt.event.KeyEvent;
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ServerSock extends KeyAdapter {
 
     BufferedReader BR;
     boolean Running = true;
     Card card = new Card();
+    PlayerStats Player = new PlayerStats()
+
     public static ArrayList<Socket> SocketArray = new ArrayList<Socket>();
-    public static ArrayList<String> Users = new ArrayList<String>();
+    //public static ArrayList<String> Users = new ArrayList<String>();
+    public static ArrayList<PlayerStats> Players = new ArrayList<PlayerStats>();
+    PlayerStats tempplayer = new PlayerStats();
+    tempplayer.setName("Rey");
+    tempplayer.setID(0);
+    Players.add(tempplayer);
+
+    System.out.println(StudentList.get(0).getName()+", "+StudentList.get(0).getId());
+
     ServerSock() {
 
     }
@@ -23,42 +34,54 @@ public class ServerSock extends KeyAdapter {
         // Opens server socket on port 1337
         ServerSocket SRVSock = new ServerSocket(444);
 
-        //Setting the server socket to a socket
+        while (Running) {
+            Socket sock = SRVSock.accept();
+            SocketArray.add(sock);
+            InputStreamReader IR = new InputStreamReader(sock.getInputStream());
+            BR = new BufferedReader(IR);
 
-        //Socket sock = SRVSock.accept();
-       // ServerThread st=new ServerThread(sock);
-        //st.start();
-        //InputStreamRead
+            AddUserName(sock);
+            System.out.println(Users);
 
 
+            System.out.println("Client is connected from: " + sock.getLocalAddress().getHostName());
+            //Setting the message to a String and print
+          //  String message = BR.readLine();
+          //  System.out.println(message);
 
-            //BufferedReader
+/*            if (message.equals("card")) {
+                PrintStream PS = new PrintStream(sock.getOutputStream());
+                PS.println(card.DrawDev());
 
-            while (Running) {
-                Socket sock = SRVSock.accept();
-                SocketArray.add(sock);
-                InputStreamReader IR = new InputStreamReader(sock.getInputStream());
-                BR = new BufferedReader(IR);
+            }
+            // Message received - Going to Client
+            if (message != null) {
+                PrintStream PS = new PrintStream(sock.getOutputStream());
+                PS.println("Message Received");
 
-                System.out.println("Client is connected from: " + sock.getLocalAddress().getHostName());
-                //Setting the message to a String and print
-                String message = BR.readLine();
-                System.out.println(message);
-                if (message.equals("card")) {
-                    PrintStream PS = new PrintStream(sock.getOutputStream());
-                    PS.println(card.DrawDev());
-
-                }
-                // Message received - Going to Client
-                if (message != null) {
-                    PrintStream PS = new PrintStream(sock.getOutputStream());
-                    PS.println("Message Received");
-
-                    }
-        }
-
+            }*/
 
         }
+    }
+
+    public static void AddUserName(Socket X) throws IOException {
+        Scanner input = new Scanner(X.getInputStream());
+        String userName = input.nextLine();
+        Users.add(userName);
+
+
+
+    /*    for(int i = 1; i <= ChatServer.SocketArray.size(); i++){
+            Socket tmpSock = (Socket) ChatServer.SocketArray.get(i-1);
+            PrintWriter out = new PrintWriter(tmpSock.getOutputStream());
+            out.println("#" + Users);
+            out.flush();
+        }*/
+    }
+
+
+
+
 
 }
 
