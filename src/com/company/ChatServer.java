@@ -10,8 +10,8 @@ import java.util.Scanner;
 /**
  * Created by Dines on 27-10-2015.
  */
-public class ChatServer {
-/*
+/*public class ChatServer {
+
     public static ArrayList<Socket> SocketArray = new ArrayList<Socket>();
     public static ArrayList<String> Users = new ArrayList<String>();
 
@@ -50,5 +50,5 @@ public class ChatServer {
     {
 
     }
-    */
-}
+
+}*/
