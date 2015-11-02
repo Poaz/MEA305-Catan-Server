@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae1b3ad-9e5b-4b3f-8ba9-a5d79d3e4f32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ClientSock.java" afterPath="$PROJECT_DIR$/src/com/company/ClientSock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ServerSock.java" afterPath="$PROJECT_DIR$/src/com/company/ServerSock.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MEA305AWESOMESHITPROJECT-Server.iws" />
@@ -551,7 +549,7 @@
       <workItem from="1446371001530" duration="9288000" />
       <workItem from="1446380528181" duration="12115000" />
       <workItem from="1446451517268" duration="14714000" />
-      <workItem from="1446468915285" duration="1030000" />
+      <workItem from="1446468915285" duration="1040000" />
     </task>
     <task id="LOCAL-00001" summary="Server and GUI">
       <created>1446311622858</created>
@@ -589,11 +587,17 @@
       <option name="project" value="LOCAL" />
       <updated>1446469647879</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="diverse">
+      <created>1446469983827</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1446469983827</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47271000" />
+    <option name="totallyTimeSpent" value="47281000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
