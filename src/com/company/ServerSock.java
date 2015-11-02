@@ -45,7 +45,7 @@ public class ServerSock extends KeyAdapter {
           //  String message = BR.readLine();
           //  System.out.println(message);
 
-/*            if (message.equals("card")) {
+            if (message.equals("card")) {
                 PrintStream PS = new PrintStream(sock.getOutputStream());
                 PS.println(card.DrawDev());
 
@@ -55,7 +55,7 @@ public class ServerSock extends KeyAdapter {
                 PrintStream PS = new PrintStream(sock.getOutputStream());
                 PS.println("Message Received");
 
-            }*/
+            }
 
         }
     }

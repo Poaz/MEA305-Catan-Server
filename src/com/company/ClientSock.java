@@ -10,7 +10,7 @@ import java.net.*;
 public class ClientSock  extends KeyAdapter {
 
     int ID = 23;
-    String nickName = "zilen";
+    String nickName = "Andreas";
     ClientSock(){
 
     }

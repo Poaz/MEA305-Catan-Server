@@ -17,11 +17,11 @@ public class Card {
     }
 
     public void Resources() {
-        String wood;
-        String ore;
-        String wool;
-        String grain;
-        String brick;
+        int wood;
+        int ore;
+        int wool;
+        int grain;
+        int brick;
     }
 
     public void DevCard() {
