@@ -29,13 +29,13 @@ public class ClientSock  extends KeyAdapter {
 
     public void run()throws Exception {
 
-        Socket sock = new Socket("192.168.0.103", 444);
+        Socket sock = new Socket("localhost", 444);
         PrintStream PS = new PrintStream(sock.getOutputStream());
-        PS.println(nickName);
-       // PS.println(ID);
-
+        //PS.println(nickName);
+        //PS.println(ID);
+        //PS.println("card"); //Draw Development card from server (already shuffled)
         //Testing things
-        PS.println("card");
+        PS.println("turnEnd"); //Change turn order
 
 
         InputStreamReader IR = new InputStreamReader(sock.getInputStream());

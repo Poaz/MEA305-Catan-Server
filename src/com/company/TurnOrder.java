@@ -8,12 +8,22 @@ import java.util.Arrays;
 public class TurnOrder {
     int[] cPRessources;
     int[] tPRessources;
-    public boolean[] playerList = new boolean[4];
 
-    public static int switchPlayer(int currentPlayer, boolean[] playerList) {
+    public static int switchPlayer(int currentPlayer/*, boolean[] playerList*/) {
+        //new version of switchPlayer
+        if(currentPlayer<4){
+            currentPlayer ++;
+            return currentPlayer;
+        }
+        else{
+            currentPlayer=1;
+            return currentPlayer;
+        }
+    }
+
         // if the current player + 1 = length (size) of array,
         // start back at the beginning and find the first player still playing
-        if (currentPlayer + 1 == playerList.length) {
+       /* if (currentPlayer + 1 == playerList.length) {
             for (int i = 0; i < playerList.length; i++) {
                 if (playerList[i] == true) {    // if player is still in the game
                     currentPlayer = i;         // currentPlayer = current index of array
@@ -33,7 +43,7 @@ public class TurnOrder {
             }
         }
         return currentPlayer;
-    }
+    }*/
 
     public void Trade(int currentPlayer, int tradingPlayer, int[] cPRessources, int[] tPRessources) {
         int[] cPres = new int[4];

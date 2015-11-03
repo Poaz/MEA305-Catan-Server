@@ -38,23 +38,32 @@ public class ServerSock extends KeyAdapter {
             InputStreamReader IR = new InputStreamReader(sock.getInputStream());
             BR = new BufferedReader(IR);
 
-            AddUserName(sock);
+            //AddUserName(sock);
 
             System.out.println("Client is connected from: " + sock.getLocalAddress().getHostName());
             //Setting the message to a String and print
-          //  String message = BR.readLine();
+           String message = BR.readLine();
           //  System.out.println(message);
 
             if (message.equals("card")) {
                 PrintStream PS = new PrintStream(sock.getOutputStream());
                 PS.println(card.DrawDev());
-
             }
             // Message received - Going to Client
             if (message != null) {
                 PrintStream PS = new PrintStream(sock.getOutputStream());
                 PS.println("Message Received");
 
+            }
+            //Turnorder
+            if(message.equals("turnEnd")){
+               /* boolean dark[] = new boolean[2]; // number of players still active.
+                dark[0] = true;
+                dark[1] = true;
+                dark[2] = false;
+                dark[3] = false;*/
+                PrintStream PS = new PrintStream(sock.getOutputStream());
+                PS.println(TurnOrder.switchPlayer(4/*PlayerStats.getID(),dark*/));
             }
 
         }

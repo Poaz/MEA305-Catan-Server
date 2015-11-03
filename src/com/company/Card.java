@@ -26,25 +26,25 @@ public class Card {
 
     public void DevCard() {
         for (int i = 0; i < 13; i++) {
-            cards.add("soldier");
+            cards.add("1"); //Knight cards x 14
         }
         for (int j = 0; j < 1; j++) {
-            cards.add("progressM");
-            cards.add("progressF");
-            cards.add("progressB");
+            cards.add("9");//Monopoly cards x 2
+            cards.add("7");//Year of plenty x 2
+            cards.add("8");//Build a road x 2
         }
-        cards.add("vPMarkedplace");
-        cards.add("vPUniversity");
-        cards.add("vPParlament");
-        cards.add("vPLibrary");
-        cards.add("vPCatherdral");
+        cards.add("4");//Marketplace x 1
+        cards.add("2");//University x 1
+        cards.add("5");//Parlament x 1
+        cards.add("3");//Library x 1
+        cards.add("6");//Cathedral x 1
         //System.out.println(cards.get(20)); //Checks if cards are there.
         Collections.shuffle(cards);
         /*for(int k = 0; k<20;k++){
             System.out.println(cards.get(k));
         }//Checks if cards get shuffled.*/
 
-        System.out.println(cards.get(20)); //Checks if cards are there.
+        //System.out.println(cards.get(20)); //Checks if cards are there.
     }
 
     public String DrawDev() {
