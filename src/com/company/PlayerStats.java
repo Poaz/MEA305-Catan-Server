@@ -1,6 +1,8 @@
 package com.company;
 
 
+import com.esotericsoftware.kryonet.Connection;
+
 public class PlayerStats {
 
    public int ID;
@@ -9,6 +11,9 @@ public class PlayerStats {
     int knights_played = 0;
     int length_of_road = 0;
     int resources_on_hand = 0;
+    public Connection c;
+    public int TEMPpoint;
+
 
     PlayerStats(){
 
@@ -26,7 +31,9 @@ public class PlayerStats {
 
         return false;
     }
+    public void update(){
 
+    }
 
     public int getID() {
         return ID;
