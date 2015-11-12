@@ -7,13 +7,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public abstract class GUI extends ServerSock implements ActionListener {
+public abstract class GUI implements ActionListener {
 
     private JFrame f;
     private JPanel p;
     private JButton b1, b2, b3, b4;
     private JLabel ab;
-    ServerSock server = new ServerSock();
+    //ServerSock server = new ServerSock();
 
     public GUI() {
         Interface();
@@ -58,17 +58,7 @@ public abstract class GUI extends ServerSock implements ActionListener {
         b1.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                while (true) {
-                    if (e.getSource() == b1) {
-                        try {
-                            server.run();
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
-                    } else if (e.getSource() == b2) {
-                        System.exit(0);
-                    }
-            }
+
         }
     });
 
