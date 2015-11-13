@@ -11,6 +11,7 @@ public class GameServer extends Listener {
 
     static final int port = 23820;
     static Server server;
+    //Containing connections
     static Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
 
     public static void main(String[] args) throws IOException {

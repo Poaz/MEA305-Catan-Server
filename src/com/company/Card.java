@@ -10,12 +10,13 @@ public class Card {
 
     ArrayList<String> cards = new ArrayList<String>();
 
+    /*
     public static void main(String[] args) {
         Card card = new Card();
         card.DevCard();
 
     }
-
+    */
     public void Resources() {
         int wood;
         int ore;
