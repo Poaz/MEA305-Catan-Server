@@ -31,6 +31,7 @@ public class GameServer extends Listener {
 
         //Classes that needs to be registered into KryoNet so they can be sent.
         server.getKryo().register(PlayerStats.class);
+        server.getKryo().register(Dice.class);
 
         //Binding the server port
         server.bind(port, port);
@@ -78,17 +79,21 @@ public class GameServer extends Listener {
         //If statements for setting the new values in the classes after the
         //Packets are received.
         if(o instanceof PlayerStats){
-            //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
+        //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
             PlayerStats packet = (PlayerStats) o;
-            //Sets the temp to the real class.
-            players.get(c.getID()).point = packet.point;
-            //Gets ID
-            packet.point = c.getID();
-            //Sends all a new list of connection names.
-            server.sendToAllExceptUDP(c.getID(), packet);
-            //Prints to server console
-            System.out.println("received and sent an updated point packet");
-            System.out.println(packet.point);
+
+
+                //Sets the temp to the real class.
+                players.get(c.getID()).point = packet.point;
+                //Gets ID
+                packet.point = ((PlayerStats) o).point;
+                //Sends all a new list of connection names.
+                server.sendToAllExceptUDP(c.getID(), packet);
+                //Prints to server console
+                System.out.println("received and sent an updated point packet");
+                System.out.println(packet.point);
+
+
         }
     }
 
