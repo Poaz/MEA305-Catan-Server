@@ -8,7 +8,7 @@ class PlayerStats {
     public int ID;
     public String Name;
     public Connection c;
-    public int TEMPpoint;
+    public int TEMPpoint = 0;
     int point = 0;
     private int knights_played = 0;
     private int length_of_road = 0;
