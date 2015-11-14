@@ -5,6 +5,6 @@ package com.company;
  */
 class TurnOrder {
 
-    public static int turn = 1;
-    public static final int newTurn = 2;
+    public static int turn = 0;
+    public static final int newTurn = 0;
 }
