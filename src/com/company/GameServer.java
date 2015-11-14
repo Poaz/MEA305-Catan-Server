@@ -23,6 +23,7 @@ public class GameServer extends Listener {
         //Classes that needs to be registered into KryoNet so they can be sent.
         server.getKryo().register(PlayerStats.class);
         server.getKryo().register(Dice.class);
+        server.getKryo().register(TurnOrder.class);
 
         //Binding the server port
         server.bind(port, port);
@@ -72,19 +73,30 @@ public class GameServer extends Listener {
         //Packets are received.
         if (o instanceof PlayerStats) {
             //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
-            PlayerStats packet = (PlayerStats) o;
+            PlayerStats playerPacket = (PlayerStats) o;
 
             //Point
             //Sets the temp to the real class.
-            players.get(c.getID()).point = packet.point;
+            players.get(c.getID()).point = playerPacket.point;
             //Gets ID
-            packet.point = ((PlayerStats) o).point;
+            playerPacket.point = ((PlayerStats) o).point;
             //Sends all a new list of connection names.
-            server.sendToAllExceptUDP(c.getID(), packet);
+            server.sendToAllExceptUDP(c.getID(), playerPacket);
             //Prints to server console
             System.out.println("Received and sent an updated packet");
-            System.out.println(packet.point);
-            System.out.println(packet.Name);
+            System.out.println(playerPacket.point);
+            System.out.println(playerPacket.Name);
+        }
+        if(o instanceof TurnOrderv1){
+            TurnOrder turnPacket = new TurnOrder();
+            //Point
+            turnPacket.turn = ((TurnOrder) o).newTurn;
+            //Sends all a new list of connection names.
+            server.sendToAllExceptUDP(c.getID(), turnPacket);
+            //Prints to server console
+            System.out.println("Received and sent an updated packet");
+            System.out.println(turnPacket.turn);
+
         }
     }
 
