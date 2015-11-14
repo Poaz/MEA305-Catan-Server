@@ -6,9 +6,9 @@ import java.util.Collections;
 /**
  * Created by Dines on 27-10-2015.
  */
-public class Card {
+class Card {
 
-    ArrayList<String> cards = new ArrayList<String>();
+    private final ArrayList<String> cards = new ArrayList<String>();
 
     /*
     public static void main(String[] args) {

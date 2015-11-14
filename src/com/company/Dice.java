@@ -1,7 +1,7 @@
 package com.company;
 
 
-public class Dice {
+class Dice {
 
     private int die1;
     private int die2;
@@ -10,7 +10,7 @@ public class Dice {
         roll();
     }
 
-    public void roll() {
+    private void roll() {
 
         die1 = (int) (Math.random() * 6) + 1;
         die2 = (int) (Math.random() * 6) + 1;

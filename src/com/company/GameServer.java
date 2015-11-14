@@ -4,16 +4,17 @@ import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 import com.esotericsoftware.minlog.Log;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class GameServer extends Listener {
 
-    static final int port = 23820;
-    static Server server;
+    private static final int port = 23820;
+    private static Server server;
     //Containing connections
-    static Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
+    private static final Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
 
     public static void main(String[] args) throws IOException {
 
@@ -22,7 +23,7 @@ public class GameServer extends Listener {
 
         //Classes that needs to be registered into KryoNet so they can be sent.
         server.getKryo().register(PlayerStats.class);
-        server.getKryo().register(Dice.class);
+        //server.getKryo().register(Dice.class);
         server.getKryo().register(TurnOrder.class);
 
         //Binding the server port
@@ -86,11 +87,13 @@ public class GameServer extends Listener {
             System.out.println("Received and sent an updated packet");
             System.out.println(playerPacket.point);
             System.out.println(playerPacket.Name);
+
+
         }
-        if(o instanceof TurnOrderv1){
-            TurnOrder turnPacket = new TurnOrder();
+        if (o instanceof TurnOrder) {
+            TurnOrder turnPacket = (TurnOrder) o;
             //Point
-            turnPacket.turn = ((TurnOrder) o).newTurn;
+            TurnOrder.turn = turnPacket.newTurn;
             //Sends all a new list of connection names.
             server.sendToAllExceptUDP(c.getID(), turnPacket);
             //Prints to server console

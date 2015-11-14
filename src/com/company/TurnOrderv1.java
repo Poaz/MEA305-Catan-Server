@@ -1,11 +1,9 @@
 package com.company;
 
-import java.util.Arrays;
-
 /**
  * Created by AndreasKjong on 02-11-2015.
  */
-public class TurnOrderv1 {
+class TurnOrderv1 {
     //int[] cPRessources;
     //int[] tPRessources;
     public static int turn = 0;

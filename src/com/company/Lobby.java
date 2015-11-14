@@ -1,7 +1,7 @@
 package com.company;
 
 
-public class Lobby {
+class Lobby {
 
 
     //skal stå i serversock
