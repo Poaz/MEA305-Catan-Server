@@ -12,14 +12,15 @@ public class Lobby {
     lobby.startgame();
     */
 
-    Lobby(){
-
-    }
-    public void addplayer(){
+    Lobby() {
 
     }
 
-    public void startgame(){
+    public void addplayer() {
+
+    }
+
+    public void startgame() {
 
     }
 

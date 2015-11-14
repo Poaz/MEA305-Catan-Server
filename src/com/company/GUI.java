@@ -5,7 +5,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public abstract class GUI implements ActionListener {
 
@@ -59,11 +58,11 @@ public abstract class GUI implements ActionListener {
 
             public void actionPerformed(ActionEvent e) {
 
-        }
-    });
+            }
+        });
 
         f.add(p);
 
-     }
     }
+}
 

@@ -11,18 +11,17 @@ public class TurnOrder {
 
     public static int switchPlayer(int currentPlayer/*, boolean[] playerList*/) {
         //new version of switchPlayer
-        if(currentPlayer<4){
-            currentPlayer ++;
+        if (currentPlayer < 4) {
+            currentPlayer++;
             return currentPlayer;
-        }
-        else{
-            currentPlayer=1;
+        } else {
+            currentPlayer = 1;
             return currentPlayer;
         }
     }
 
-        // if the current player + 1 = length (size) of array,
-        // start back at the beginning and find the first player still playing
+    // if the current player + 1 = length (size) of array,
+    // start back at the beginning and find the first player still playing
        /* if (currentPlayer + 1 == playerList.length) {
             for (int i = 0; i < playerList.length; i++) {
                 if (playerList[i] == true) {    // if player is still in the game
@@ -61,7 +60,8 @@ public class TurnOrder {
         String b = Arrays.toString(cPRessources);
         return b;
     }
-    public String ReturnB(){
+
+    public String ReturnB() {
         String c = Arrays.toString(tPRessources);
         return c;
     }

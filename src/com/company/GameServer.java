@@ -1,8 +1,9 @@
 package com.company;
+
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
-
+import com.esotericsoftware.minlog.Log;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,16 +16,6 @@ public class GameServer extends Listener {
     static Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
 
     public static void main(String[] args) throws IOException {
-        //Playerstat creation
-        // PlayerStats player1 = new PlayerStats(0,"Thomas");
-
-        //Dice rolling
-        //Dice dice = new Dice();
-
-        //Dice prints
-        //System.out.println("Dice 1 = " + dice.getDie1());
-        //System.out.println("Dice 2 = " + dice.getDie2());
-        //System.out.println("Total = " + dice.getTotal());
 
         //Initialize the server
         server = new Server();
@@ -43,7 +34,7 @@ public class GameServer extends Listener {
         server.addListener(new GameServer());
 
         //Prints to server console
-        System.out.println("The server is ready");
+        System.out.println("The server is ready!");
     }
 
     public void connected(Connection c) {
@@ -72,32 +63,32 @@ public class GameServer extends Listener {
         players.put(c.getID(), player);
         //Prints to server console
         System.out.println("Connection received");
+        Log.set(Log.LEVEL_DEBUG);
     }
 
-    public void received(Connection c, Object o){
+    public void received(Connection c, Object o) {
 
         //If statements for setting the new values in the classes after the
         //Packets are received.
-        if(o instanceof PlayerStats){
-        //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
+        if (o instanceof PlayerStats) {
+            //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
             PlayerStats packet = (PlayerStats) o;
 
-
-                //Sets the temp to the real class.
-                players.get(c.getID()).point = packet.point;
-                //Gets ID
-                packet.point = ((PlayerStats) o).point;
-                //Sends all a new list of connection names.
-                server.sendToAllExceptUDP(c.getID(), packet);
-                //Prints to server console
-                System.out.println("received and sent an updated point packet");
-                System.out.println(packet.point);
-
-
+            //Point
+            //Sets the temp to the real class.
+            players.get(c.getID()).point = packet.point;
+            //Gets ID
+            packet.point = ((PlayerStats) o).point;
+            //Sends all a new list of connection names.
+            server.sendToAllExceptUDP(c.getID(), packet);
+            //Prints to server console
+            System.out.println("Received and sent an updated packet");
+            System.out.println(packet.point);
+            System.out.println(packet.Name);
         }
     }
 
-    public void disconnected (Connection c){
+    public void disconnected(Connection c) {
 
         //Removes a player from the map
         players.remove(c.getID());
