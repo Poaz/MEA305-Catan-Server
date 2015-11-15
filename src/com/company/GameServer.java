@@ -15,7 +15,6 @@ public class GameServer extends Listener {
     private static Server server;
     //Containing connections
     private static final Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
-    private static final Map<Integer, TurnOrder> players1 = new HashMap<Integer,TurnOrder>();
 
     public static void main(String[] args) throws IOException {
 
@@ -72,14 +71,14 @@ public class GameServer extends Listener {
     public void received(Connection c, Object o) {
         if (o instanceof TurnOrder) {
             TurnOrder turnPacket = (TurnOrder) o;
-            players1.get(c.getID()).turn = turnPacket.turn;
             //TurnOrder
-            TurnOrder.turn = turnPacket.newTurn;
+            turnPacket.turn = turnPacket.newTurn;
             //Sends all a new list of connection names.
             server.sendToAllExceptUDP(c.getID(), turnPacket);
             //Prints to server console
             System.out.println("Received and sent an updated packet");
             System.out.println(turnPacket.turn);
+
 
         }
         //If statements for setting the new values in the classes after the
