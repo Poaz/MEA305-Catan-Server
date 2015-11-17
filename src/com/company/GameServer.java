@@ -19,12 +19,13 @@ public class GameServer extends Listener {
     public static void main(String[] args) throws IOException {
 
         //Initialize the server
-        server = new Server();
+        server = new Server(16384, 2048);
+
 
         //Classes that needs to be registered into KryoNet so they can be sent.
         server.getKryo().register(PlayerStats.class);
-        //server.getKryo().register(Dice.class);
-        server.getKryo().register(TurnOrder.class);
+        server.getKryo().register(int[].class);
+        server.getKryo().register(SharedData.class);
 
         //Binding the server port
         server.bind(port, port);
@@ -69,37 +70,41 @@ public class GameServer extends Listener {
     }
 
     public void received(Connection c, Object o) {
-        if (o instanceof TurnOrder) {
-            TurnOrder turnPacket = (TurnOrder) o;
-            //TurnOrder
-            turnPacket.turn = turnPacket.newTurn;
-            //Sends all a new list of connection names.
-            server.sendToAllExceptUDP(c.getID(), turnPacket);
-            //Prints to server console
-            System.out.println("Received and sent an updated packet");
-            System.out.println(turnPacket.turn);
 
-
-        }
-        //If statements for setting the new values in the classes after the
-        //Packets are received.
         if (o instanceof PlayerStats) {
             //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
             PlayerStats playerPacket = (PlayerStats) o;
 
+
+            //Adds name to the connection ID in a string array carrying all names.
+            SharedData.names[c.getID()] = ((PlayerStats) o).name;
+            //Points acquired by each player.
+            SharedData.points[c.getID()] = playerPacket.point;
+            //Knights played by player, in an int array.
+            SharedData.knightsPlayed[c.getID()] = playerPacket.knights_played;
+            //Lobby Ready boolean array
+            SharedData.lobbyReady[c.getID()] = playerPacket.lobbyReady;
+            //Longest Road
+            SharedData.longestRoad[c.getID()] = playerPacket.length_of_road;
+            //Resources on hand.
+            SharedData.resourcesOnHand[c.getID()] = playerPacket.resources_on_hand;
+            //Turn order, determined by player ID
+            //SharedData.turn = playerPacket.
+
             //Point
             //Sets the temp to the real class.
             players.get(c.getID()).point = playerPacket.point;
-            //Gets ID
-            playerPacket.point = ((PlayerStats) o).point;
+
             //Sends all a new list of connection names.
             server.sendToAllExceptUDP(c.getID(), playerPacket);
+
             //Prints to server console
             System.out.println("Received and sent an updated packet");
             System.out.println(playerPacket.point);
-            System.out.println(playerPacket.Name);
+            System.out.println(playerPacket.name);
+            System.out.println(SharedData.names[c.getID()]);
+            System.out.println(c.getID());
         }
-
 
     }
 

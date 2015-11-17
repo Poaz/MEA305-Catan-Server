@@ -5,18 +5,19 @@ import com.esotericsoftware.kryonet.Connection;
 
 class PlayerStats {
 
-    public int ID;
-    public String Name;
+    public static int ID;
+    public static String name;
     public Connection c;
-    public int TEMPpoint = 0;
-    int point = 0;
-    private int knights_played = 0;
-    private int length_of_road = 0;
-    private int resources_on_hand = 0;
-
+    public static int TEMPpoint = 0;
+    public static int point = 0;
+    int knights_played = 0;
+    int length_of_road = 0;
+    int resources_on_hand = 0;
+    public static boolean lobbyReady = false;
 
     PlayerStats() {
-
+        this.name = name;
+        this.point = point;
     }
 
     public void updateplayerstats(int additional_points, int additional_knights, int current_length_of_road, int current_resources_on_hand) {
@@ -32,7 +33,7 @@ class PlayerStats {
         return false;
     }
 
-    public void update() {
+    public static void update() {
 
     }
 
@@ -45,10 +46,10 @@ class PlayerStats {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        name = name;
     }
 }
