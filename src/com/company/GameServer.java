@@ -17,6 +17,7 @@ public class GameServer extends Listener {
     private static Server server;
     //Containing connections
     private static final Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
+    SharedData data = new SharedData();
 
     public static void main(String[] args) throws IOException {
 
@@ -27,6 +28,9 @@ public class GameServer extends Listener {
         server.getKryo().register(PlayerStats.class);
         server.getKryo().register(int[].class);
         server.getKryo().register(SharedData.class);
+        server.getKryo().register(SharedPlayerStats.class);
+        server.getKryo().register(boolean[].class);
+        server.getKryo().register(String[].class);
 
         //Binding the server port
         server.bind(port, port);
@@ -73,41 +77,44 @@ public class GameServer extends Listener {
         Log.set(Log.LEVEL_DEBUG);
     }
 
+
     @Override
     public void received(Connection c, Object o) {
 
-       if (o instanceof PlayerStats) {
+       if (o instanceof SharedPlayerStats) {
             //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
-            PlayerStats playerPacket = (PlayerStats) o;
+            SharedPlayerStats playerPacket = (SharedPlayerStats) o;
 
             //Adds name to the connection ID in a string array carrying all names.
-            SharedData.names[c.getID()] = playerPacket.nsname;
+            data.names[c.getID()-1] = playerPacket.nsname;
             //Points acquired by each player.
-            SharedData.points[c.getID()] = playerPacket.point;
+            data.points[c.getID()-1] = playerPacket.nspoint;
             //Knights played by player, in an int array.
-            SharedData.knightsPlayed[c.getID()] = playerPacket.knights_played;
+            data.knightsPlayed[c.getID()-1] = playerPacket.nsknights_played;
             //Lobby Ready boolean array
-            SharedData.lobbyReady[c.getID()] = playerPacket.lobbyReady;
+            data.lobbyReady[c.getID()-1] = playerPacket.nslobbyReady;
             //Longest Road
-            SharedData.longestRoad[c.getID()] = playerPacket.length_of_road;
+            data.longestRoad[c.getID()-1] = playerPacket.nslength_of_road;
             //Resources on hand.
-            SharedData.resourcesOnHand[c.getID()] = playerPacket.resources_on_hand;
+            data.resourcesOnHand[c.getID()-1] = playerPacket.nsresources_on_hand;
             //Turn order, determined by player ID
             //SharedData.turn = playerPacket.
 
             //Point
             //Sets the temp to the real class.
-            players.get(c.getID()).point = playerPacket.point;
+            players.get(c.getID()).point = playerPacket.nspoint;
 
-            //Sends all a new list of connection names.
-            server.sendToAllExceptUDP(c.getID(), playerPacket);
+            //Sends out the data packet
+            //server.sendToAllExceptTCP(c.getID(), data);
+            //server.sendToAllUDP(data);
+            server.sendToAllTCP(data);
 
             //Prints to server console
             System.out.println("Received and sent an updated packet");
-            System.out.println(playerPacket.point);
-            System.out.println(playerPacket.name);
-            System.out.println(SharedData.names[c.getID()]);
-            System.out.println(c.getID());
+            System.out.println(playerPacket.nspoint);
+            System.out.println(playerPacket.nsname);
+            System.out.println(data.names[c.getID()-1]);
+            System.out.println(c.getID()-1);
         }
 
     }
