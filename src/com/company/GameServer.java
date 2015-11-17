@@ -1,11 +1,13 @@
 package com.company;
 
 import com.esotericsoftware.kryonet.Connection;
+import com.esotericsoftware.kryonet.FrameworkMessage;
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 import com.esotericsoftware.minlog.Log;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +23,6 @@ public class GameServer extends Listener {
         //Initialize the server
         server = new Server(16384, 2048);
 
-
         //Classes that needs to be registered into KryoNet so they can be sent.
         server.getKryo().register(PlayerStats.class);
         server.getKryo().register(int[].class);
@@ -33,6 +34,7 @@ public class GameServer extends Listener {
         //Start the server
         server.start();
 
+
         //Add a listener to the server
         server.addListener(new GameServer());
 
@@ -40,6 +42,8 @@ public class GameServer extends Listener {
         System.out.println("The server is ready!");
     }
 
+
+    @Override
     public void connected(Connection c) {
 
         //Making a player object
@@ -69,14 +73,15 @@ public class GameServer extends Listener {
         Log.set(Log.LEVEL_DEBUG);
     }
 
+    @Override
     public void received(Connection c, Object o) {
 
-        if (o instanceof PlayerStats) {
+       if (o instanceof PlayerStats) {
             //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
             PlayerStats playerPacket = (PlayerStats) o;
 
             //Adds name to the connection ID in a string array carrying all names.
-            SharedData.names[c.getID()] = ((PlayerStats) o).name;
+            SharedData.names[c.getID()] = playerPacket.nsname;
             //Points acquired by each player.
             SharedData.points[c.getID()] = playerPacket.point;
             //Knights played by player, in an int array.
@@ -106,7 +111,7 @@ public class GameServer extends Listener {
         }
 
     }
-
+    @Override
     public void disconnected(Connection c) {
 
         //Removes a player from the map
