@@ -75,7 +75,6 @@ public class GameServer extends Listener {
             //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
             PlayerStats playerPacket = (PlayerStats) o;
 
-
             //Adds name to the connection ID in a string array carrying all names.
             SharedData.names[c.getID()] = ((PlayerStats) o).name;
             //Points acquired by each player.
