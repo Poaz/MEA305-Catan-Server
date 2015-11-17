@@ -105,7 +105,7 @@ public class GameServer extends Listener {
             players.get(c.getID()).point = playerPacket.nspoint;
 
             //Sends out the data packet
-            //server.sendToAllExceptTCP(c.getID(), data);
+            server.sendToAllExceptTCP(c.getID(), data);
             //server.sendToAllUDP(data);
             server.sendToAllTCP(data);
 
