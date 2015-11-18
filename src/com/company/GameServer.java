@@ -42,8 +42,6 @@ public class GameServer extends Listener {
         //Add a listener to the server
         server.addListener(new GameServer());
 
-        //Prints to server console
-        System.out.println("The server is ready!");
     }
 
 
@@ -72,8 +70,8 @@ public class GameServer extends Listener {
 
         //Sets players in player map.
         players.put(c.getID(), player);
-        //Prints to server console
-        System.out.println("Connection received");
+
+        //Prints to server console [DEBUGGING]
         Log.set(Log.LEVEL_DEBUG);
     }
 
@@ -81,26 +79,25 @@ public class GameServer extends Listener {
     @Override
     public void received(Connection c, Object o) {
 
-       if (o instanceof SharedPlayerStats) {
+        if (o instanceof SharedPlayerStats) {
             //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
             SharedPlayerStats playerPacket = (SharedPlayerStats) o;
 
             //Adds name to the connection ID in a string array carrying all names.
-            data.names[c.getID()-1] = playerPacket.nsname;
+            data.names[c.getID() - 1] = playerPacket.nsname;
             //Points acquired by each player.
-            data.points[c.getID()-1] = playerPacket.nspoint;
+            data.points[c.getID() - 1] = playerPacket.nspoint;
             //Knights played by player, in an int array.
-            data.knightsPlayed[c.getID()-1] = playerPacket.nsknights_played;
+            data.knightsPlayed[c.getID() - 1] = playerPacket.nsknights_played;
             //Lobby Ready boolean array
-            data.lobbyReady[c.getID()-1] = playerPacket.nslobbyReady;
+            data.lobbyReady[c.getID() - 1] = playerPacket.nslobbyReady;
             //Longest Road
-            data.longestRoad[c.getID()-1] = playerPacket.nslength_of_road;
+            data.longestRoad[c.getID() - 1] = playerPacket.nslength_of_road;
             //Resources on hand.
-            data.resourcesOnHand[c.getID()-1] = playerPacket.nsresources_on_hand;
+            data.resourcesOnHand[c.getID() - 1] = playerPacket.nsresources_on_hand;
             //Turn order, determined by player ID
             //SharedData.turn = playerPacket.
 
-            //Point
             //Sets the temp to the real class.
             players.get(c.getID()).point = playerPacket.nspoint;
 
@@ -110,14 +107,12 @@ public class GameServer extends Listener {
             server.sendToAllTCP(data);
 
             //Prints to server console
-            System.out.println("Received and sent an updated packet");
-            System.out.println(playerPacket.nspoint);
-            System.out.println(playerPacket.nsname);
-            System.out.println(data.names[c.getID()-1]);
-            System.out.println(c.getID()-1);
+            System.out.println("[Server]: Received a packet from ID: " + (c.getID()-1));
+            System.out.println("[Server]: ID: " + (c.getID()-1) + " *** Points: " + data.points[c.getID() - 1]);
+            System.out.println("[Server]: ID: " + (c.getID()-1) + " *** Name: " + data.names[c.getID() - 1]);
         }
-
     }
+
     @Override
     public void disconnected(Connection c) {
 
@@ -130,7 +125,7 @@ public class GameServer extends Listener {
         //Sends all a new list of connection names.
         server.sendToAllExceptTCP(c.getID(), packet);
         //Prints to server console
-        System.out.println("Connection dropped.");
+        //System.out.println("Connection dropped.");
     }
 }
 
