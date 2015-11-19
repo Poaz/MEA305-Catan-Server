@@ -14,6 +14,7 @@ public class PlayerStats {
     public Connection c;
     public static int TEMPpoint=1;
     public static boolean lobbyReady = false;
+    public static String[] textPackage = new String[3];
 
     public PlayerStats(){
 

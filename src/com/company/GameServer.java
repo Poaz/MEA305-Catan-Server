@@ -1,13 +1,10 @@
 package com.company;
 
 import com.esotericsoftware.kryonet.Connection;
-import com.esotericsoftware.kryonet.FrameworkMessage;
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 import com.esotericsoftware.minlog.Log;
-
 import java.io.IOException;
-import java.net.InetAddress;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +14,7 @@ public class GameServer extends Listener {
     private static Server server;
     //Containing connections
     private static final Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
-    SharedData data = new SharedData();
+    ServerData data = new ServerData();
 
     public static void main(String[] args) throws IOException {
 
@@ -27,8 +24,8 @@ public class GameServer extends Listener {
         //Classes that needs to be registered into KryoNet so they can be sent.
         server.getKryo().register(PlayerStats.class);
         server.getKryo().register(int[].class);
-        server.getKryo().register(SharedData.class);
-        server.getKryo().register(SharedPlayerStats.class);
+        server.getKryo().register(ServerData.class);
+        server.getKryo().register(ClientData.class);
         server.getKryo().register(boolean[].class);
         server.getKryo().register(String[].class);
 
@@ -38,12 +35,9 @@ public class GameServer extends Listener {
         //Start the server
         server.start();
 
-
         //Add a listener to the server
         server.addListener(new GameServer());
-
     }
-
 
     @Override
     public void connected(Connection c) {
@@ -60,16 +54,17 @@ public class GameServer extends Listener {
         //Sends all a new list of connection names.
         server.sendToAllExceptTCP(c.getID(), packet);
 
-        /*
-        for (PlayerStats p : players.values()) {
-            PlayerStats packet2 = new PlayerStats();
-            packet2.ID = p.c.getID();
-            c.sendTCP(packet2);
-        }
-        */
+        //
+        //for (PlayerStats p : players.values()) {
+        //    PlayerStats packet2 = new PlayerStats();
+        //    packet2.ID = p.c.getID();
+        //    c.sendTCP(packet2);
+        //}
+        //
 
         //Sets players in player map.
         players.put(c.getID(), player);
+
 
         //Prints to server console [DEBUGGING]
         Log.set(Log.LEVEL_DEBUG);
@@ -78,10 +73,11 @@ public class GameServer extends Listener {
 
     @Override
     public void received(Connection c, Object o) {
+            data.CheckLobbyReady();
 
-        if (o instanceof SharedPlayerStats) {
+        if (o instanceof ClientData) {
             //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
-            SharedPlayerStats playerPacket = (SharedPlayerStats) o;
+            ClientData playerPacket = (ClientData) o;
 
             //Adds name to the connection ID in a string array carrying all names.
             data.names[c.getID() - 1] = playerPacket.nsname;
@@ -90,7 +86,7 @@ public class GameServer extends Listener {
             //Knights played by player, in an int array.
             data.knightsPlayed[c.getID() - 1] = playerPacket.nsknights_played;
             //Lobby Ready boolean array
-            data.lobbyReady[c.getID() - 1] = playerPacket.nslobbyReady;
+            data.lobbyReadyAll[c.getID() - 1] = playerPacket.nslobbyReady;
             //Longest Road
             data.longestRoad[c.getID() - 1] = playerPacket.nslength_of_road;
             //Resources on hand.
@@ -98,8 +94,10 @@ public class GameServer extends Listener {
             //Turn order, determined by player ID
             //SharedData.turn = playerPacket.
 
-            //Sets the temp to the real class.
-            players.get(c.getID()).point = playerPacket.nspoint;
+            data.textToRender = playerPacket.nstextPackage;
+
+
+           //players.get(c.getID()).points[c.getID()-1] = playerPacket.nspoint;
 
             //Sends out the data packet
             server.sendToAllExceptTCP(c.getID(), data);
@@ -110,11 +108,19 @@ public class GameServer extends Listener {
             System.out.println("[Server]: Received a packet from ID: " + (c.getID()-1));
             System.out.println("[Server]: ID: " + (c.getID()-1) + " *** Points: " + data.points[c.getID() - 1]);
             System.out.println("[Server]: ID: " + (c.getID()-1) + " *** Name: " + data.names[c.getID() - 1]);
+            System.out.println("[Server]: ID: " + (c.getID()-1) + " *** Ready: " + data.lobbyReadyAll[c.getID()-1]);
         }
+
+        if(data.StartGame){
+            server.sendToAllExceptTCP(c.getID(), data);
+            server.sendToAllTCP(data);
+        }
+
     }
 
     @Override
     public void disconnected(Connection c) {
+
 
         //Removes a player from the map
         players.remove(c.getID());
@@ -126,6 +132,7 @@ public class GameServer extends Listener {
         server.sendToAllExceptTCP(c.getID(), packet);
         //Prints to server console
         //System.out.println("Connection dropped.");
+
     }
 }
 
