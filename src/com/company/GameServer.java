@@ -31,6 +31,7 @@ public class GameServer extends Listener {
         server.getKryo().register(ClientData.class);
         server.getKryo().register(boolean[].class);
         server.getKryo().register(String[].class);
+        server.getKryo().register(Dice.class);
 
         //Binding the server port
         server.bind(port, port);
@@ -85,6 +86,7 @@ public class GameServer extends Listener {
             data.resourcesOnHand[c.getID() - 1] = playerPacket.nsresources_on_hand;
             //Turn order, determined by player ID
             //SharedData.turn = playerPacket.
+            data.ID = c.getID();
             //Checks if the received packet boolean is true.
             if(playerPacket.nsTextSent){
                 data.updateOldMessages();

@@ -9,12 +9,15 @@ public class ServerData {
     public int[] resourcesOnHand = new int[]{0,0,0,0};
     public boolean[] lobbyReadyAll = new boolean[]{false,false,false,false};
     public int longestRoad[] = new int[]{0,0,0,0};
-    public int turn;
+    public int turn, dice1, dice2;
     public boolean StartGame = false;
     public String[] textToRender = new String[]{"","",""};
     public String[] oldText = new String[10];
+    public int ID;
+    public
 
 
+    Dice dice = new Dice();
     public ServerData(){
 
     }
@@ -26,7 +29,16 @@ public class ServerData {
         }
     }
 
-        public void updateOldMessages(){
+    public void SetDice(){
+
+        dice.roll();
+        dice1 = dice.getDie1();
+        dice2 = dice.getDie2();
+    }
+
+
+
+    public void updateOldMessages(){
             if(textToRender[1] == ""){ //If there was one line of text..
                 for (int i = oldText.length-1; i>0; i--){
                     oldText[i] = oldText[i-1];

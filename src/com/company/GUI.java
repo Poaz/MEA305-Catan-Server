@@ -51,11 +51,11 @@ public class GUI implements ActionListener {
         b3 = new JButton("");
         b4 = new JButton("");
 
-        ab = new JLabel("Settlers of Catan");
-        p1 = new JLabel(1), p1name = new JLabel(ServerData.names[0]), p1connected, p1point, p1knights, p1resource, p1longestRoad, p1gameStarted;
-        p2 = new JLabel(1), p2name = new JLabel(ServerData.names[1]), p2connected, p2point, p2knights, p2resource, p2longestRoad, p2gameStarted;
-        p3 = new JLabel(1), p3name = new JLabel(ServerData.names[2]), p3connected, p3point, p3knights, p3resource, p3longestRoad, p3gameStarted;
-        p4 = new JLabel(1), p4name = new JLabel(ServerData.names[3]), p4connected, p4point, p4knights, p4resource, p4longestRoad, p4gameStarted;
+        //ab = new JLabel("Settlers of Catan");
+        //p1 = new JLabel(1), p1name = new JLabel(ServerData.names[0]), p1connected, p1point, p1knights, p1resource, p1longestRoad, p1gameStarted;
+        //p2 = new JLabel(1), p2name = new JLabel(ServerData.names[1]), p2connected, p2point, p2knights, p2resource, p2longestRoad, p2gameStarted;
+        //p3 = new JLabel(1), p3name = new JLabel(ServerData.names[2]), p3connected, p3point, p3knights, p3resource, p3longestRoad, p3gameStarted;
+        //p4 = new JLabel(1), p4name = new JLabel(ServerData.names[3]), p4connected, p4point, p4knights, p4resource, p4longestRoad, p4gameStarted;
 
         GridBagConstraints c = new GridBagConstraints();
 
