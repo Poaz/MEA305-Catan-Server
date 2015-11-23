@@ -38,16 +38,13 @@ public class ServerData {
     }
 
     public void CheckLobbyReady() {
-
         if (lobbyReadyAll[0] && lobbyReadyAll[1] && lobbyReadyAll[2] && lobbyReadyAll[3]) {
             ShuffleMap();
             StartGame = true;
-
         }
     }
 
     public void SetDice(){
-
         dice.roll();
         dice1 = dice.getDie1();
         dice2 = dice.getDie2();
