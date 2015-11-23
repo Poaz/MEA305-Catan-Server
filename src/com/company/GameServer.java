@@ -97,9 +97,6 @@ public class GameServer extends Listener {
             //Chat text.
             data.textToRender = playerPacket.nstextPackage;
 
-
-
-
            //players.get(c.getID()).points[c.getID()-1] = playerPacket.nspoint;
 
             //Sends out the data packet
