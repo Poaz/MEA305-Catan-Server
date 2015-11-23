@@ -45,13 +45,13 @@ public class ServerData {
     }
 
     public void SetDice(){
-        dice.roll();
-        dice1 = dice.getDie1();
-        dice2 = dice.getDie2();
+        //dice.roll();
+        //dice1 = dice.getDie1();
+        //dice2 = dice.getDie2();
     }
 
     public void SetCard(){
-        cardID = card.DrawDev();
+       // cardID = card.DrawDev();
     }
 
     public void updateOldMessages(){

@@ -5,6 +5,7 @@ import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 import com.esotericsoftware.minlog.Log;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +32,12 @@ public class GameServer extends Listener {
         server.getKryo().register(ClientData.class);
         server.getKryo().register(boolean[].class);
         server.getKryo().register(String[].class);
+        server.getKryo().register(ArrayList.class);
+        server.getKryo().register(Integer[].class);
+        server.getKryo().register(Integer.class);
         server.getKryo().register(Dice.class);
+        server.getKryo().register(Card.class);
+
 
         //Binding the server port
         server.bind(port, port);
