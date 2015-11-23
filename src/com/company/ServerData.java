@@ -53,5 +53,69 @@ public class ServerData {
                 oldText[0] = textToRender[2];
             }
         }
+
+    public String[] getNames() {
+        return names;
     }
+
+    public void setNames(String[] names) {
+        this.names = names;
+    }
+
+    public int[] getPoints() {
+        return points;
+    }
+
+    public void setPoints(int[] points) {
+        this.points = points;
+    }
+
+    public int[] getKnightsPlayed() {
+        return knightsPlayed;
+    }
+
+    public void setKnightsPlayed(int[] knightsPlayed) {
+        this.knightsPlayed = knightsPlayed;
+    }
+
+    public int[] getResourcesOnHand() {
+        return resourcesOnHand;
+    }
+
+    public void setResourcesOnHand(int[] resourcesOnHand) {
+        this.resourcesOnHand = resourcesOnHand;
+    }
+
+    public boolean[] getLobbyReadyAll() {
+        return lobbyReadyAll;
+    }
+
+    public void setLobbyReadyAll(boolean[] lobbyReadyAll) {
+        this.lobbyReadyAll = lobbyReadyAll;
+    }
+
+    public int[] getLongestRoad() {
+        return longestRoad;
+    }
+
+    public void setLongestRoad(int[] longestRoad) {
+        this.longestRoad = longestRoad;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
+    public boolean isStartGame() {
+        return StartGame;
+    }
+
+    public void setStartGame(boolean startGame) {
+        StartGame = startGame;
+    }
+}
 
