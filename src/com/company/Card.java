@@ -6,8 +6,8 @@ import java.util.Collections;
 class Card {
     public ArrayList<Integer> cards = new ArrayList<Integer>();
 
-  public Card(){
-  }
+    public Card() {
+    }
 
     public void DevCard() {
         for (int i = 0; i < 13; i++) {
