@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.*;
 
 public class ServerData {
 
@@ -9,23 +10,39 @@ public class ServerData {
     public int[] resourcesOnHand = new int[]{0,0,0,0};
     public boolean[] lobbyReadyAll = new boolean[]{false,false,false,false};
     public int longestRoad[] = new int[]{0,0,0,0};
-    public int turn, dice1, dice2;
+    public int turn, dice1, dice2, ID, cardID;
     public boolean StartGame = false;
     public String[] textToRender = new String[]{"","",""};
     public String[] oldText = new String[10];
-    public int ID;
-    public
+
+    Integer[] yieldNumbers = {2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12};
+    ArrayList<Integer> listOfYieldNumbers = new ArrayList<Integer>(Arrays.asList(yieldNumbers));
+    ArrayList<String> listOfTileTypes = new ArrayList<String>( Arrays.<String>asList(
+                    "Grain", "Grain", "Grain", "Grain",
+                    "Lumber", "Lumber", "Lumber", "Lumber",
+                    "Wool", "Wool", "Wool", "Wool",
+                    "Ore", "Ore", "Ore",
+                    "Brick", "Brick", "Brick",
+                    "Desert"));
 
 
+    Card card = new Card();
     Dice dice = new Dice();
-    public ServerData(){
 
+    public ServerData(){
+    }
+
+    public void ShuffleMap(){
+        Collections.shuffle(listOfYieldNumbers);
+        Collections.shuffle(listOfTileTypes);
     }
 
     public void CheckLobbyReady() {
 
         if (lobbyReadyAll[0] && lobbyReadyAll[1] && lobbyReadyAll[2] && lobbyReadyAll[3]) {
+            ShuffleMap();
             StartGame = true;
+
         }
     }
 
@@ -36,7 +53,9 @@ public class ServerData {
         dice2 = dice.getDie2();
     }
 
-
+    public void SetCard(){
+        cardID = card.DrawDev();
+    }
 
     public void updateOldMessages(){
             if(textToRender[1] == ""){ //If there was one line of text..
@@ -69,65 +88,27 @@ public class ServerData {
     public String[] getNames() {
         return names;
     }
-
-    public void setNames(String[] names) {
-        this.names = names;
-    }
-
     public int[] getPoints() {
         return points;
     }
-
-    public void setPoints(int[] points) {
-        this.points = points;
-    }
-
     public int[] getKnightsPlayed() {
         return knightsPlayed;
     }
-
-    public void setKnightsPlayed(int[] knightsPlayed) {
-        this.knightsPlayed = knightsPlayed;
-    }
-
     public int[] getResourcesOnHand() {
         return resourcesOnHand;
     }
-
-    public void setResourcesOnHand(int[] resourcesOnHand) {
-        this.resourcesOnHand = resourcesOnHand;
-    }
-
     public boolean[] getLobbyReadyAll() {
         return lobbyReadyAll;
     }
-
-    public void setLobbyReadyAll(boolean[] lobbyReadyAll) {
-        this.lobbyReadyAll = lobbyReadyAll;
-    }
-
     public int[] getLongestRoad() {
         return longestRoad;
     }
-
-    public void setLongestRoad(int[] longestRoad) {
-        this.longestRoad = longestRoad;
-    }
-
     public int getTurn() {
         return turn;
     }
-
-    public void setTurn(int turn) {
-        this.turn = turn;
-    }
-
     public boolean isStartGame() {
         return StartGame;
     }
 
-    public void setStartGame(boolean startGame) {
-        StartGame = startGame;
-    }
 }
 

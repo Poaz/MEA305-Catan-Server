@@ -1,6 +1,5 @@
 package com.company;
 
-import com.sun.deploy.util.SessionState;
 
 public class ClientData {
     public int nsID;
