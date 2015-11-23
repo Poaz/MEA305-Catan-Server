@@ -14,7 +14,7 @@ public class ClientData {
 
     public ClientData() {
     }
-
+/*
     public void pack(){
         nsID = PlayerStats.ID;
         nsname = PlayerStats.name;
@@ -25,4 +25,5 @@ public class ClientData {
         nslobbyReady = PlayerStats.lobbyReady;
         nstextPackage = PlayerStats.textPackage;
     }
+    */
 }
