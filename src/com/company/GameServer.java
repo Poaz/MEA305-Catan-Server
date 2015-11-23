@@ -10,18 +10,21 @@ import java.util.Map;
 
 public class GameServer extends Listener {
 
+    //Initializing Port and server.
     private static final int port = 23820;
     private static Server server;
-    //Containing connections
+
+    //Containing connections in a HashMap.
     private static final Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
+
+    //Making a Server object.
     ServerData data = new ServerData();
 
     public static void main(String[] args) throws IOException {
-
         //Initialize the server
         server = new Server(16384, 2048);
 
-        //Classes that needs to be registered into KryoNet so they can be sent.
+        //Classes that needs to be registered into KryoNet so they can be sent over Kryonet.
         server.getKryo().register(PlayerStats.class);
         server.getKryo().register(int[].class);
         server.getKryo().register(ServerData.class);
@@ -41,11 +44,10 @@ public class GameServer extends Listener {
 
     @Override
     public void connected(Connection c) {
-
         //Making a player object
         PlayerStats player = new PlayerStats();
 
-        //Making a PacketAddPlayer object
+        //Making a second player object
         PlayerStats packet = new PlayerStats();
 
         //Setting the ID in the PacketAddPlayer class to whatever ID comes from the connection.
@@ -54,17 +56,8 @@ public class GameServer extends Listener {
         //Sends all a new list of connection names.
         server.sendToAllExceptTCP(c.getID(), packet);
 
-        //
-        //for (PlayerStats p : players.values()) {
-        //    PlayerStats packet2 = new PlayerStats();
-        //    packet2.ID = p.c.getID();
-        //    c.sendTCP(packet2);
-        //}
-        //
-
         //Sets players in player map.
         players.put(c.getID(), player);
-
 
         //Prints to server console [DEBUGGING]
         Log.set(Log.LEVEL_DEBUG);
@@ -115,16 +108,13 @@ public class GameServer extends Listener {
             server.sendToAllExceptTCP(c.getID(), data);
             server.sendToAllTCP(data);
         }
-
     }
 
     @Override
     public void disconnected(Connection c) {
-
-
         //Removes a player from the map
         players.remove(c.getID());
-        //Makes a packet of the PacketRemovePlayer
+        //Makes a packet of PlayerStats
         PlayerStats packet = new PlayerStats();
         //Gets ID
         packet.ID = c.getID();
@@ -132,7 +122,6 @@ public class GameServer extends Listener {
         server.sendToAllExceptTCP(c.getID(), packet);
         //Prints to server console
         //System.out.println("Connection dropped.");
-
     }
 }
 
