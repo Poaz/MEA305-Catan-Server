@@ -72,6 +72,9 @@ public class GameServer extends Listener {
             //Makes a packet of the PacketAddPlayer and sets it equal to the incoming object.
             ClientData playerPacket = (ClientData) o;
 
+
+
+
             //Adds name to the connection ID in a string array carrying all names.
             data.names[c.getID() - 1] = playerPacket.nsname;
             //Points acquired by each player.
@@ -87,13 +90,20 @@ public class GameServer extends Listener {
             //Turn order, determined by player ID
             //SharedData.turn = playerPacket.
 
+            if(playerPacket.nsTextSent){
+                data.updateOldMessages();
+            }
+
+            //Chat text.
             data.textToRender = playerPacket.nstextPackage;
+
+
 
 
            //players.get(c.getID()).points[c.getID()-1] = playerPacket.nspoint;
 
             //Sends out the data packet
-            server.sendToAllExceptTCP(c.getID(), data);
+            //server.sendToAllExceptTCP(c.getID(), data);
             //server.sendToAllUDP(data);
             server.sendToAllTCP(data);
 
@@ -102,7 +112,11 @@ public class GameServer extends Listener {
             System.out.println("[Server]: ID: " + (c.getID()-1) + " *** Points: " + data.points[c.getID() - 1]);
             System.out.println("[Server]: ID: " + (c.getID()-1) + " *** Name: " + data.names[c.getID() - 1]);
             System.out.println("[Server]: ID: " + (c.getID()-1) + " *** Ready: " + data.lobbyReadyAll[c.getID()-1]);
+
+
+
         }
+
 
         if(data.StartGame){
             server.sendToAllExceptTCP(c.getID(), data);

@@ -10,7 +10,9 @@ public class ClientData {
     public int nslength_of_road;
     public int nsresources_on_hand;
     public boolean nslobbyReady;
-    public String[] nstextPackage = new String[3];
+    public String[] nstextPackage = new String[]{"","",""};
+    public boolean nsTextSent;
+
 
     public ClientData() {
     }
