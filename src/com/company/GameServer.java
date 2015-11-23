@@ -15,6 +15,7 @@ public class GameServer extends Listener {
     //Initializing Port and server.
     private static final int port = 23820;
     private static Server server;
+    private boolean GameStarted = true;
 
     //Containing connections in a HashMap.
     private static final Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
@@ -36,8 +37,8 @@ public class GameServer extends Listener {
         server.getKryo().register(ArrayList.class);
         server.getKryo().register(Integer[].class);
         server.getKryo().register(Integer.class);
-        server.getKryo().register(Dice.class);
-        server.getKryo().register(Card.class);
+        //server.getKryo().register(Dice.class);
+        //server.getKryo().register(Card.class);
 
 
         //Binding the server port
@@ -113,9 +114,11 @@ public class GameServer extends Listener {
             //players.get(c.getID()).points[c.getID()-1] = playerPacket.nspoint;
         }
 
-        if (data.StartGame) {
+        if (data.StartGame && GameStarted) {
             server.sendToAllExceptTCP(c.getID(), data);
             server.sendToAllTCP(data);
+            GameStarted = false;
+
         }
     }
 

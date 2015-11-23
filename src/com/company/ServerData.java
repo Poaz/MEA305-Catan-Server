@@ -26,8 +26,8 @@ public class ServerData {
             "Desert"));
 
 
-    Card card = new Card();
-    Dice dice = new Dice();
+    //Card card = new Card();
+   // Dice dice = new Dice();
 
     public ServerData() {
     }
