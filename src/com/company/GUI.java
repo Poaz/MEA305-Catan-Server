@@ -6,9 +6,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.applet.Applet;
 
-public class GUI implements ActionListener {
+
+public class GUI extends JFrame implements ActionListener {
 
     private JFrame f;
     private JPanel p;
@@ -26,13 +26,24 @@ public class GUI implements ActionListener {
 
     public static void main(String[] args) throws IOException {
         GUI gui = new GUI();
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+        /*javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
             }
-        });
+        });*/
     }
+    /*private static void createAndShowGUI() {
+        //Create and set up the window.
+        JFrame frame = new JFrame("ServerGUI");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        //Set up the content pane.
+        addComponentsToPane(frame.getContentPane());
+
+        //Display the window.
+        frame.setSize(800,500);
+        frame.setVisible(true);
+    }*/
     public GUI() {
         Interface();
     }
@@ -45,9 +56,14 @@ public class GUI implements ActionListener {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p = new JPanel(new GridBagLayout());
         p.setBackground(Color.GREEN);
+        setLayout(new GridLayout(6,4));
+//Grid Layout
+
 
         ab = new JLabel("Settlers of Catan");
+
         p1 = new JLabel("1");
+        add(p1);
         p1name = new JLabel(data.getNames()[0]);
         p1point = new JLabel(Integer.toString(data.getPoints()[0]));
         p1knights = new JLabel(Integer.toString(data.getKnightsPlayed()[0]));
@@ -77,6 +93,7 @@ public class GUI implements ActionListener {
         p4gameStarted = new JLabel(Integer.toString(data.getTurn()));
 
 
+
         f.add(p);
 
     }
@@ -85,7 +102,7 @@ public class GUI implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-    }
+    }/*
     public static void addComponentsToPane(Container pane) {
         if (RIGHT_TO_LEFT) {
             pane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
@@ -142,18 +159,7 @@ public class GUI implements ActionListener {
         c.gridy = 2;       //third row
         pane.add(button, c);
     }
+*/
 
-    private static void createAndShowGUI() {
-        //Create and set up the window.
-        JFrame frame = new JFrame("ServerGUI");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        //Set up the content pane.
-        addComponentsToPane(frame.getContentPane());
-
-        //Display the window.
-        frame.pack();
-        frame.setVisible(true);
-    }
 
 }
