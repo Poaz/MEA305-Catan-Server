@@ -10,10 +10,12 @@ public class ServerData {
     public int[] resourcesOnHand = new int[]{0, 0, 0, 0};
     public boolean[] lobbyReadyAll = new boolean[]{false, false, false, false};
     public int longestRoad[] = new int[]{0, 0, 0, 0};
-    public int turn, dice1, dice2, ID, cardID;
+    public int turn, dice1, dice2, ID, cardID, die1, die2;
     public boolean StartGame = false;
     public String[] textToRender = new String[]{"", "", ""};
     public String[] oldText = new String[10];
+    public ArrayList<Integer> cards = new ArrayList<Integer>();
+
 
     Integer[] yieldNumbers = {2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12};
     ArrayList<Integer> listOfYieldNumbers = new ArrayList<Integer>(Arrays.asList(yieldNumbers));
@@ -25,11 +27,44 @@ public class ServerData {
             "Brick", "Brick", "Brick",
             "Desert"));
 
-
-    //Card card = new Card();
-   // Dice dice = new Dice();
-
     public ServerData() {
+    }
+
+    public void TurnOrder(){
+
+    }
+
+    public void DevCard() {
+        for (int i = 0; i < 13; i++) {
+            cards.add(1); //Knight cards x 14
+        }
+
+        for (int j = 0; j < 1; j++) {
+            cards.add(9);//Monopoly cards x 2
+            cards.add(7);//Year of plenty x 2
+            cards.add(8);//Build a road x 2
+        }
+        cards.add(4);//Marketplace x 1
+        cards.add(2);//University x 1
+        cards.add(5);//Parlament x 1
+        cards.add(3);//Library x 1
+        cards.add(6);//Cathedral x 1
+
+        Collections.shuffle(cards);
+    }
+
+    public void DrawDev() {
+        cardID = cards.get(0);
+        cards.remove(0);
+    }
+
+    public void roll() {
+
+        die1 = (int) (Math.random() * 6) + 1;
+        die2 = (int) (Math.random() * 6) + 1;
+
+        dice1 = die1;
+        dice2 = die2;
     }
 
     public void ShuffleMap() {
@@ -42,16 +77,6 @@ public class ServerData {
             ShuffleMap();
             StartGame = true;
         }
-    }
-
-    public void SetDice() {
-        //dice.roll();
-        //dice1 = dice.getDie1();
-        //dice2 = dice.getDie2();
-    }
-
-    public void SetCard() {
-        // cardID = card.DrawDev();
     }
 
     public void updateOldMessages() {
