@@ -37,9 +37,7 @@ public class GameServer extends Listener {
         server.getKryo().register(ArrayList.class);
         server.getKryo().register(Integer[].class);
         server.getKryo().register(Integer.class);
-        //server.getKryo().register(Dice.class);
-        //server.getKryo().register(Card.class);
-
+        server.getKryo().register(float[].class);
 
         //Binding the server port
         server.bind(port, port);
@@ -94,8 +92,11 @@ public class GameServer extends Listener {
             //Turn order, determined by player ID
             //SharedData.turn = playerPacket.
             data.ID = c.getID();
-            //Checks if the received packet boolean is true.
 
+            data.serializedHouse = playerPacket.serializedHouse;
+
+
+            //Checks if the received packet boolean is true.
             if (playerPacket.nsTextSent) {
                 data.updateOldMessages();
             }
