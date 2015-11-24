@@ -70,8 +70,7 @@ public class GameServer extends Listener {
 
         //Prints to server console [DEBUGGING]
         Log.set(Log.LEVEL_DEBUG);
-    }
-
+}
 
     @Override
     public void received(Connection c, Object o) {
@@ -96,6 +95,7 @@ public class GameServer extends Listener {
             //SharedData.turn = playerPacket.
             data.ID = c.getID();
             //Checks if the received packet boolean is true.
+
             if (playerPacket.nsTextSent) {
                 data.updateOldMessages();
             }
