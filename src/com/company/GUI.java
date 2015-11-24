@@ -17,8 +17,7 @@ public class GUI implements ActionListener {
     private JLabel p2, p2name, p2connected, p2point, p2knights, p2resource, p2longestRoad, p2gameStarted;
     private JLabel p3, p3name, p3connected, p3point, p3knights, p3resource, p3longestRoad, p3gameStarted;
     private JLabel p4, p4name, p4connected, p4point, p4knights, p4resource, p4longestRoad, p4gameStarted;
-    //ServerSock server = new ServerSock();
-
+    ServerData data = new ServerData();
 
 
 
@@ -51,12 +50,12 @@ public class GUI implements ActionListener {
         b3 = new JButton("");
         b4 = new JButton("");
 
-        //ab = new JLabel("Settlers of Catan");
-        //p1 = new JLabel(1), p1name = new JLabel(ServerData.names[0]), p1connected, p1point, p1knights, p1resource, p1longestRoad, p1gameStarted;
-        //p2 = new JLabel(1), p2name = new JLabel(ServerData.names[1]), p2connected, p2point, p2knights, p2resource, p2longestRoad, p2gameStarted;
-        //p3 = new JLabel(1), p3name = new JLabel(ServerData.names[2]), p3connected, p3point, p3knights, p3resource, p3longestRoad, p3gameStarted;
-        //p4 = new JLabel(1), p4name = new JLabel(ServerData.names[3]), p4connected, p4point, p4knights, p4resource, p4longestRoad, p4gameStarted;
-
+        ab = new JLabel("Settlers of Catan");
+        /*p1 = new JLabel("1"); p1name = new JLabel(data.getNames()[0]); p1point= new JLabel(data.getPoints()[0]); p1knights= new JLabel(data.getNames()[0]); p1resource= new JLabel(data.getNames()[0]); p1longestRoad= new JLabel(data.getNames()[0]); p1gameStarted= new JLabel(data.getNames()[0]);
+        p2 = new JLabel("2"); p2name = new JLabel(data.getNames()[1]); p2point= new JLabel(data.getPoints()[1]); p2knights= new JLabel(data.getNames()[1]); p2resource= new JLabel(data.getNames()[1]); p2longestRoad= new JLabel(data.getNames()[1]); p2gameStarted= new JLabel(data.getNames()[1]);
+        p3 = new JLabel("3"); p3name = new JLabel(data.getNames()[2]); p3point= new JLabel(data.getPoints()[2]); p3knights= new JLabel(data.getNames()[2]); p3resource= new JLabel(data.getNames()[2]); p3longestRoad= new JLabel(data.getNames()[2]); p3gameStarted= new JLabel(data.getNames()[2]);
+        p4 = new JLabel("1"); p4name = new JLabel(data.getNames()[3]); p4point= new JLabel(data.getPoints()[3]); p4knights= new JLabel(data.getNames()[3]); p4resource= new JLabel(data.getNames()[3]); p4longestRoad= new JLabel(data.getNames()[3]); p4gameStarted= new JLabel(data.getNames()[3]);
+*/
         GridBagConstraints c = new GridBagConstraints();
 
         c.insets = new Insets(10, 10, 10, 10);
