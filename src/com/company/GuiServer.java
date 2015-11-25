@@ -10,11 +10,12 @@ public class GuiServer extends JFrame {
     JLabel p4, p4name, p4connected, p4point, p4knights, p4resource, p4longestRoad, p4gameStarted;
     JLabel playerNumber,names,points,knightsOnHand,resourcesOnHand,longestRoad;
 
-    ServerData data = new ServerData();
 
     public GuiServer() {
+    }
 
-
+    ServerData data = new ServerData();
+    public void update(String[] name, int[] point, int[] knightsPlayed, int[] resources, int[] longestRoads, int turn){
         setLayout(new GridLayout(6,4));
         playerNumber = new JLabel("Player number:");
         names = new JLabel("Names of Players:");
@@ -23,33 +24,33 @@ public class GuiServer extends JFrame {
         resourcesOnHand = new JLabel("Number of Resources on Hand:");
         longestRoad = new JLabel("Number of Roads Connected:");
         p1 = new JLabel("1");
-        p1name = new JLabel(data.getNames()[0]);
-        p1point = new JLabel(Integer.toString(data.getPoints()[0]));
-        p1knights = new JLabel(Integer.toString(data.getKnightsPlayed()[0]));
-        p1resource = new JLabel(Integer.toString(data.getResourcesOnHand()[0]));
-        p1longestRoad = new JLabel(Integer.toString(data.getLongestRoad()[0]));
-        p1gameStarted = new JLabel(Integer.toString(data.getTurn()));
+        p1name = new JLabel(name[0]);
+        p1point = new JLabel(Integer.toString(point[0]));
+        p1knights = new JLabel(Integer.toString(knightsPlayed[0]));
+        p1resource = new JLabel(Integer.toString(resources[0]));
+        p1longestRoad = new JLabel(Integer.toString(longestRoads[0]));
+        p1gameStarted = new JLabel(Integer.toString(turn));
         p2 = new JLabel("2");
-        p2name= new JLabel(data.getNames()[1]);
-        p2point = new JLabel(Integer.toString(data.getPoints()[1]));
-        p2knights = new JLabel(Integer.toString(data.getKnightsPlayed()[1]));
-        p2resource = new JLabel(Integer.toString(data.getResourcesOnHand()[1]));
-        p2longestRoad = new JLabel(Integer.toString(data.getLongestRoad()[1]));
-        p2gameStarted = new JLabel(Integer.toString(data.getTurn()));
+        p2name= new JLabel(name[1]);
+        p2point = new JLabel(Integer.toString(point[1]));
+        p2knights = new JLabel(Integer.toString(knightsPlayed[1]));
+        p2resource = new JLabel(Integer.toString(resources[1]));
+        p2longestRoad = new JLabel(Integer.toString(longestRoads[1]));
+        p2gameStarted = new JLabel(Integer.toString(turn));
         p3 = new JLabel("3");
-        p3name = new JLabel(data.getNames()[2]);
-        p3point = new JLabel(Integer.toString(data.getPoints()[2]));
-        p3knights = new JLabel(Integer.toString(data.getKnightsPlayed()[2]));
-        p3resource = new JLabel(Integer.toString(data.getResourcesOnHand()[2]));
-        p3longestRoad = new JLabel(Integer.toString(data.getLongestRoad()[2]));
-        p3gameStarted = new JLabel(Integer.toString(data.getTurn()));
+        p3name = new JLabel(name[2]);
+        p3point = new JLabel(Integer.toString(point[2]));
+        p3knights = new JLabel(Integer.toString(knightsPlayed[2]));
+        p3resource = new JLabel(Integer.toString(resources[2]));
+        p3longestRoad = new JLabel(Integer.toString(longestRoads[2]));
+        p3gameStarted = new JLabel(Integer.toString(turn));
         p4 = new JLabel("4");
-        p4name = new JLabel(data.getNames()[3]);
-        p4point = new JLabel(Integer.toString(data.getPoints()[3]));
-        p4knights = new JLabel(Integer.toString(data.getKnightsPlayed()[3]));
-        p4resource = new JLabel(Integer.toString(data.getResourcesOnHand()[3]));
-        p4longestRoad = new JLabel(Integer.toString(data.getLongestRoad()[3]));
-        p4gameStarted = new JLabel(Integer.toString(data.getTurn()));
+        p4name = new JLabel(name[3]);
+        p4point = new JLabel(Integer.toString(point[3]));
+        p4knights = new JLabel(Integer.toString(knightsPlayed[3]));
+        p4resource = new JLabel(Integer.toString(resources[3]));
+        p4longestRoad = new JLabel(Integer.toString(longestRoads[3]));
+        p4gameStarted = new JLabel(Integer.toString(turn));
 
         JLabel[] labelData ={
                 playerNumber, p1, p2, p3, p4,
@@ -63,9 +64,8 @@ public class GuiServer extends JFrame {
         for(int i = 0; i<labelData.length; i++){
             add(labelData[i]);
         }
-
-
     }
+
 
     public static void main(String args[]){
         GuiServer gui = new GuiServer();
