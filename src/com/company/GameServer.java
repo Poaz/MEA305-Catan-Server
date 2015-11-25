@@ -137,6 +137,7 @@ public class GameServer extends Listener {
     }
     public void update(){
         GUI.update(data.names, data.points, data.knightsPlayed, data.resourcesOnHand, data.longestRoad, data.turn);
+        GUI.repaint();
         GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GUI.setVisible(true);
         GUI.setSize(1000,200);

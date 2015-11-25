@@ -16,6 +16,12 @@ public class GuiServer extends JFrame {
     }
 
     ServerData data = new ServerData();
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+    }
+
     public void update(String[] name, int[] point, int[] knightsPlayed, int[] resources, int[] longestRoads, int turn){
 
         setLayout(new GridLayout(6,4));
@@ -70,6 +76,5 @@ public class GuiServer extends JFrame {
 
             hasRun = true;
         }
-        repaint();
     }
 }
