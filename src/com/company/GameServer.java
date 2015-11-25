@@ -5,6 +5,7 @@ import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 import com.esotericsoftware.minlog.Log;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +23,11 @@ public class GameServer extends Listener {
 
     //Making a Server object.
     ServerData data = new ServerData();
+
+    //Making a GUI object
+    GuiServer GUI = new GuiServer();
+
+
 
     public static void main(String[] args) throws IOException {
         //Initialize the server
@@ -47,6 +53,17 @@ public class GameServer extends Listener {
 
         //Add a listener to the server
         server.addListener(new GameServer());
+
+
+
+    }
+
+    public void update(){
+        GUI.update(data.names, data.points, data.knightsPlayed, data.resourcesOnHand, data.longestRoad, data.turn);
+        GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        GUI.setVisible(true);
+        GUI.setSize(1000,200);
+        GUI.setTitle("Gui Server");
     }
 
     @Override
@@ -73,6 +90,8 @@ public class GameServer extends Listener {
     @Override
     public void received(Connection c, Object o) {
         data.CheckLobbyReady();
+        update();
+
 
         if (o instanceof ClientData) {
             //Makes a packet of the ClientData class and sets it equal to the incoming object.

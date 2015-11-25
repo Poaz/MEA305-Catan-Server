@@ -65,14 +65,4 @@ public class GuiServer extends JFrame {
             add(labelData[i]);
         }
     }
-
-
-    public static void main(String args[]){
-        GuiServer gui = new GuiServer();
-        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.setVisible(true);
-        gui.setSize(1000,200);
-        //gui.pack();
-        gui.setTitle("Gui Server");
-    }
 }
