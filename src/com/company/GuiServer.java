@@ -9,6 +9,7 @@ public class GuiServer extends JFrame {
     JLabel p3, p3name, p3connected, p3point, p3knights, p3resource, p3longestRoad, p3gameStarted;
     JLabel p4, p4name, p4connected, p4point, p4knights, p4resource, p4longestRoad, p4gameStarted;
     JLabel playerNumber,names,points,knightsOnHand,resourcesOnHand,longestRoad;
+    boolean hasRun = false;
 
 
     public GuiServer() {
@@ -61,8 +62,9 @@ public class GuiServer extends JFrame {
                 longestRoad, p1longestRoad, p2longestRoad, p3longestRoad, p4longestRoad,
         };
 
-        for(int i = 0; i<labelData.length; i++){
+        if(hasRun = false){for(int i = 0; i<labelData.length; i++){
             add(labelData[i]);
-        }
+            hasRun = true;
+        }}
     }
 }
