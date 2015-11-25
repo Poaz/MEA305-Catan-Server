@@ -62,9 +62,12 @@ public class GuiServer extends JFrame {
                 longestRoad, p1longestRoad, p2longestRoad, p3longestRoad, p4longestRoad,
         };
 
-        if(hasRun = false){for(int i = 0; i<labelData.length; i++){
-            add(labelData[i]);
+        if(!hasRun){
+            for(int i = 0; i<labelData.length; i++) {
+                add(labelData[i]);
+            }
+
             hasRun = true;
-        }}
+        }
     }
 }

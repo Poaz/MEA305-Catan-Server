@@ -27,6 +27,9 @@ public class GameServer extends Listener {
     //Making a GUI object
     GuiServer GUI = new GuiServer();
 
+    GameServer(){
+
+    }
 
 
     public static void main(String[] args) throws IOException {
@@ -53,8 +56,6 @@ public class GameServer extends Listener {
 
         //Add a listener to the server
         server.addListener(new GameServer());
-
-
 
     }
 
@@ -90,8 +91,6 @@ public class GameServer extends Listener {
     @Override
     public void received(Connection c, Object o) {
         data.CheckLobbyReady();
-        update();
-
 
         if (o instanceof ClientData) {
             //Makes a packet of the ClientData class and sets it equal to the incoming object.
@@ -131,7 +130,8 @@ public class GameServer extends Listener {
             System.out.println("[Server]: ID: " + (c.getID() - 1) + " *** Name: " + data.names[c.getID() - 1]);
             System.out.println("[Server]: ID: " + (c.getID() - 1) + " *** Ready: " + data.lobbyReadyAll[c.getID() - 1]);
 
-            //players.get(c.getID()).points[c.getID()-1] = playerPacket.nspoint;
+            //Updates the server GUI with the newest stats.
+            update();
         }
 
         if (data.StartGame && GameStarted) {
