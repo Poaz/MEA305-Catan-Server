@@ -70,5 +70,6 @@ public class GuiServer extends JFrame {
 
             hasRun = true;
         }
+        repaint();
     }
 }
