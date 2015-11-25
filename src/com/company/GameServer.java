@@ -142,6 +142,7 @@ public class GameServer extends Listener {
         GUI.setVisible(true);
         GUI.setSize(1000,200);
         GUI.setTitle("Gui Server");
+
     }
 
     @Override
