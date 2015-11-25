@@ -17,6 +17,7 @@ public class GuiServer extends JFrame {
 
     ServerData data = new ServerData();
     public void update(String[] name, int[] point, int[] knightsPlayed, int[] resources, int[] longestRoads, int turn){
+
         setLayout(new GridLayout(6,4));
         playerNumber = new JLabel("Player number:");
         names = new JLabel("Names of Players:");
