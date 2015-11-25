@@ -71,5 +71,7 @@ public class GuiServer extends JFrame {
             hasRun = true;
         }
         repaint();
+        System.out.println("hello");
+        System.out.println(name[1]);
     }
 }
