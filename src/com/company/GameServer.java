@@ -111,6 +111,12 @@ public class GameServer extends Listener {
             //SharedData.turn = playerPacket.
             data.ID = c.getID();
 
+            data.endTurn = playerPacket.endTurn;
+
+            if(playerPacket.endTurn){
+                data.TurnOrder();
+            }
+
             data.serializedHouse = playerPacket.serializedHouse;
 
             //Checks if the received packet boolean is true.

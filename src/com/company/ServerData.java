@@ -20,14 +20,13 @@ public class ServerData {
     public int[] serializedHouse = new int[2];
     public boolean endTurn, diceRoll;
 
-    boolean gameEnded = false;
-    boolean turnended = false;
-    boolean p1 = false;
-    boolean p2 = false;
-    boolean p3 = false;
-    boolean p4 = false;
-    int turnorderturn = 1;
-    boolean gamestart =false;
+    public int turnorderturn = 1;
+    public boolean gameEnded = false;
+    public boolean p1 = false;
+    public boolean p2 = false;
+    public boolean p3 = false;
+    public boolean p4 = false;
+    public boolean gamestart =false;
 
 
     Integer[] yieldNumbers = {2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12};
@@ -52,66 +51,66 @@ public class ServerData {
                 p3 = false;
                 p4 = true;
 
-                    if (turnended && p4) {
+                    if (endTurn && p4) {
                         p1 = false;
                         p2 = false;
                         p3 = true;
                         p4 = false;
-                        turnended = false;
+                        endTurn = false;
                     }
-                    if (turnended && p3) {
+                    if (endTurn && p3) {
                         p1 = false;
                         p2 = true;
                         p3 = false;
                         p4 = false;
-                        turnended = false;
+                        endTurn = false;
                     }
-                    if (turnended && p2) {
+                    if (endTurn && p2) {
                         p1 = true;
                         p2 = false;
                         p3 = false;
                         p4 = false;
-                        turnended = false;
+                        endTurn = false;
                     }
-                    if(turnended && p1){
+                    if(endTurn && p1){
                         p1 = true;
                         p2 = false;
                         p3 = false;
                         p4 = false;
-                        turnended = false;
+                        endTurn = false;
                         turn++;
                     }
             }
 
             if (turnorderturn == 2) {
-                    if(turnended && p1){
+                    if(endTurn && p1){
                         p1 = false;
                         p2 = true;
                         p3 = false;
                         p4 = false;
-                        turnended = false;
+                        endTurn = false;
                     }
 
-                    if (turnended && p2) {
+                    if (endTurn && p2) {
                         p1 = false;
                         p2 = false;
                         p3 = true;
                         p4 = false;
-                        turnended = false;
+                        endTurn = false;
                     }
-                    if (turnended && p3) {
+                    if (endTurn && p3) {
                         p1 = false;
                         p2 = false;
                         p3 = false;
                         p4 = true;
-                        turnended = false;
+                        endTurn = false;
                     }
-                    if (turnended && p4) {
+                    if (endTurn && p4) {
                         p1 = true;
                         p2 = false;
                         p3 = false;
                         p4 = false;
-                        turnended = false;
+                        endTurn = false;
                     }
             }
         }
