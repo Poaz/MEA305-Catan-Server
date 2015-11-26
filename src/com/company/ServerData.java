@@ -1,6 +1,8 @@
 package com.company;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class ServerData {
 
@@ -10,12 +12,12 @@ public class ServerData {
     public int[] resourcesOnHand = new int[]{0, 0, 0, 0};
     public boolean[] lobbyReadyAll = new boolean[]{false, false, false, false};
     public int longestRoad[] = new int[]{0, 0, 0, 0};
-    public int turn,die1, die2, ID, cardID;
+    public int turn, die1, die2, ID, cardID;
     public boolean StartGame = false;
     public String[] textToRender = new String[]{"", "", ""};
     public String[] oldText = new String[10];
     public ArrayList<Integer> cards = new ArrayList<Integer>();
-    public float[] serializedHouse = new float[3];
+    public int[] serializedHouse = new int[2];
 
     Integer[] yieldNumbers = {2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12};
     ArrayList<Integer> listOfYieldNumbers = new ArrayList<Integer>(Arrays.asList(yieldNumbers));
@@ -30,7 +32,7 @@ public class ServerData {
     public ServerData() {
     }
 
-    public void TurnOrder(){
+    public void TurnOrder() {
 
     }
 

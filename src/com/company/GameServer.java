@@ -1,5 +1,6 @@
 package com.company;
 
+import com.esotericsoftware.kryo.Registration;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
@@ -15,20 +16,17 @@ public class GameServer extends Listener {
 
     //Initializing Port and server.
     private static final int port = 23820;
-    private static Server server;
-    private boolean GameStarted = true;
-
     //Containing connections in a HashMap.
     private static final Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
-
+    private static Server server;
     //Making a Server object.
     ServerData data = new ServerData();
-
     //Making a GUI object
     GuiServer GUI = new GuiServer();
+    private boolean GameStarted = true;
+    private Registration register;
 
-    GameServer(){
-
+    GameServer() {
     }
 
 
@@ -44,9 +42,8 @@ public class GameServer extends Listener {
         server.getKryo().register(boolean[].class);
         server.getKryo().register(String[].class);
         server.getKryo().register(ArrayList.class);
-        server.getKryo().register(Integer[].class);
         server.getKryo().register(Integer.class);
-        server.getKryo().register(float[].class);
+        server.getKryo().register(Integer[].class);
 
         //Binding the server port
         server.bind(port, port);
@@ -56,9 +53,7 @@ public class GameServer extends Listener {
 
         //Add a listener to the server
         server.addListener(new GameServer());
-
     }
-
 
 
     @Override
@@ -80,7 +75,7 @@ public class GameServer extends Listener {
 
         //Prints to server console [DEBUGGING]
         Log.set(Log.LEVEL_DEBUG);
-}
+    }
 
     @Override
     public void received(Connection c, Object o) {
@@ -107,7 +102,6 @@ public class GameServer extends Listener {
 
             data.serializedHouse = playerPacket.serializedHouse;
 
-
             //Checks if the received packet boolean is true.
             if (playerPacket.nsTextSent) {
                 data.updateOldMessages();
@@ -132,17 +126,16 @@ public class GameServer extends Listener {
             server.sendToAllExceptTCP(c.getID(), data);
             server.sendToAllTCP(data);
             GameStarted = false;
-
         }
     }
-    public void update(){
+
+    public void update() {
         GUI.update(data.names, data.points, data.knightsPlayed, data.resourcesOnHand, data.longestRoad, data.turn);
         GUI.repaint();
         GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GUI.setVisible(true);
-        GUI.setSize(1000,200);
+        GUI.setSize(1000, 200);
         GUI.setTitle("Gui Server");
-
     }
 
     @Override

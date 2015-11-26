@@ -8,23 +8,21 @@ public class GuiServer extends JFrame {
     JLabel p2, p2name, p2connected, p2point, p2knights, p2resource, p2longestRoad, p2gameStarted;
     JLabel p3, p3name, p3connected, p3point, p3knights, p3resource, p3longestRoad, p3gameStarted;
     JLabel p4, p4name, p4connected, p4point, p4knights, p4resource, p4longestRoad, p4gameStarted;
-    JLabel playerNumber,names,points,knightsOnHand,resourcesOnHand,longestRoad;
+    JLabel playerNumber, names, points, knightsOnHand, resourcesOnHand, longestRoad;
     boolean hasRun = false;
-
+    ServerData data = new ServerData();
 
     public GuiServer() {
     }
-
-    ServerData data = new ServerData();
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
     }
 
-    public void update(String[] name, int[] point, int[] knightsPlayed, int[] resources, int[] longestRoads, int turn){
+    public void update(String[] name, int[] point, int[] knightsPlayed, int[] resources, int[] longestRoads, int turn) {
 
-        setLayout(new GridLayout(6,4));
+        setLayout(new GridLayout(6, 4));
         playerNumber = new JLabel("Player number:");
         names = new JLabel("Names of Players:");
         points = new JLabel("Points:");
@@ -39,7 +37,7 @@ public class GuiServer extends JFrame {
         p1longestRoad = new JLabel(Integer.toString(longestRoads[0]));
         p1gameStarted = new JLabel(Integer.toString(turn));
         p2 = new JLabel("2");
-        p2name= new JLabel(name[1]);
+        p2name = new JLabel(name[1]);
         p2point = new JLabel(Integer.toString(point[1]));
         p2knights = new JLabel(Integer.toString(knightsPlayed[1]));
         p2resource = new JLabel(Integer.toString(resources[1]));
@@ -60,7 +58,7 @@ public class GuiServer extends JFrame {
         p4longestRoad = new JLabel(Integer.toString(longestRoads[3]));
         p4gameStarted = new JLabel(Integer.toString(turn));
 
-        JLabel[] labelData ={
+        JLabel[] labelData = {
                 playerNumber, p1, p2, p3, p4,
                 names, p1name, p2name, p3name, p4name,
                 points, p1point, p2point, p3point, p4point,
@@ -69,8 +67,8 @@ public class GuiServer extends JFrame {
                 longestRoad, p1longestRoad, p2longestRoad, p3longestRoad, p4longestRoad,
         };
 
-        if(!hasRun){
-            for(int i = 0; i<labelData.length; i++) {
+        if (!hasRun) {
+            for (int i = 0; i < labelData.length; i++) {
                 add(labelData[i]);
             }
 
