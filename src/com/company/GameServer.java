@@ -25,6 +25,7 @@ public class GameServer extends Listener {
     GuiServer GUI = new GuiServer();
     private boolean GameStarted = true;
     private Registration register;
+    boolean firstJoin = true;
 
     GameServer() {
     }
@@ -58,6 +59,7 @@ public class GameServer extends Listener {
 
     @Override
     public void connected(Connection c) {
+        /*
         //Making a player object
         PlayerStats player = new PlayerStats();
 
@@ -72,9 +74,19 @@ public class GameServer extends Listener {
 
         //Sets players in player map.
         players.put(c.getID(), player);
+        */
+
+        //Updating the newest player with the latest data, such as names and chat text.
+        server.sendToAllTCP(data);
+
 
         //Prints to server console [DEBUGGING]
         Log.set(Log.LEVEL_DEBUG);
+
+        if(firstJoin){
+            data.ShuffleMap();
+            firstJoin = false;
+        }
     }
 
     @Override
@@ -112,6 +124,7 @@ public class GameServer extends Listener {
             //Sends out the data packet
             server.sendToAllTCP(data);
 
+
             //Prints to server console
             System.out.println("[Server]: Received a packet from ID: " + (c.getID() - 1));
             System.out.println("[Server]: ID: " + (c.getID() - 1) + " *** Points: " + data.points[c.getID() - 1]);
@@ -148,6 +161,7 @@ public class GameServer extends Listener {
         packet.ID = c.getID();
         //Sends all a new list of connection names.
         server.sendToAllExceptTCP(c.getID(), packet);
+
         //Prints to server console
         //System.out.println("Connection dropped.");
     }

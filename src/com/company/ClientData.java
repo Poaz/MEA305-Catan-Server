@@ -12,6 +12,7 @@ public class ClientData {
     public String[] nstextPackage = new String[]{"", "", ""};
     public boolean nsTextSent;
     public int[] serializedHouse = new int[2];
+    public boolean endTurn;
 
     public ClientData() {
     }
