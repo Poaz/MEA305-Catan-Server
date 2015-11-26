@@ -20,6 +20,16 @@ public class ServerData {
     public int[] serializedHouse = new int[2];
     public boolean endTurn, diceRoll;
 
+    boolean gameEnded = false;
+    boolean turnended = false;
+    boolean p1 = false;
+    boolean p2 = false;
+    boolean p3 = false;
+    boolean p4 = false;
+    int turnorderturn = 1;
+    boolean gamestart =false;
+
+
     Integer[] yieldNumbers = {2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12};
     ArrayList<Integer> listOfYieldNumbers = new ArrayList<Integer>(Arrays.asList(yieldNumbers));
     ArrayList<String> listOfTileTypes = new ArrayList<String>(Arrays.<String>asList(
@@ -34,6 +44,77 @@ public class ServerData {
     }
 
     public void TurnOrder() {
+
+        while(!gameEnded) {
+            if (turnorderturn == 1 && gamestart) {
+                p1 = false;
+                p2 = false;
+                p3 = false;
+                p4 = true;
+
+                    if (turnended && p4) {
+                        p1 = false;
+                        p2 = false;
+                        p3 = true;
+                        p4 = false;
+                        turnended = false;
+                    }
+                    if (turnended && p3) {
+                        p1 = false;
+                        p2 = true;
+                        p3 = false;
+                        p4 = false;
+                        turnended = false;
+                    }
+                    if (turnended && p2) {
+                        p1 = true;
+                        p2 = false;
+                        p3 = false;
+                        p4 = false;
+                        turnended = false;
+                    }
+                    if(turnended && p1){
+                        p1 = true;
+                        p2 = false;
+                        p3 = false;
+                        p4 = false;
+                        turnended = false;
+                        turn++;
+                    }
+            }
+
+            if (turnorderturn == 2) {
+                    if(turnended && p1){
+                        p1 = false;
+                        p2 = true;
+                        p3 = false;
+                        p4 = false;
+                        turnended = false;
+                    }
+
+                    if (turnended && p2) {
+                        p1 = false;
+                        p2 = false;
+                        p3 = true;
+                        p4 = false;
+                        turnended = false;
+                    }
+                    if (turnended && p3) {
+                        p1 = false;
+                        p2 = false;
+                        p3 = false;
+                        p4 = true;
+                        turnended = false;
+                    }
+                    if (turnended && p4) {
+                        p1 = true;
+                        p2 = false;
+                        p3 = false;
+                        p4 = false;
+                        turnended = false;
+                    }
+            }
+        }
 
     }
 
