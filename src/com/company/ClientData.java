@@ -15,10 +15,7 @@ public class ClientData {
     public boolean endTurn, diceRoll;
 
     public boolean gameEnded = false;
-    public boolean p1 = false;
-    public boolean p2 = false;
-    public boolean p3 = false;
-    public boolean p4 = false;
+    public boolean[] playerturn = new boolean[]{false,false,false,false};
     public boolean gamestart =false;
 
     public ClientData() {

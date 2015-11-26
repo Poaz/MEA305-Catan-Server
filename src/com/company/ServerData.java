@@ -22,10 +22,7 @@ public class ServerData {
 
     public int turnorderturn = 1;
     public boolean gameEnded = false;
-    public boolean p1 = false;
-    public boolean p2 = false;
-    public boolean p3 = false;
-    public boolean p4 = false;
+    public boolean[] playerturn = new boolean[]{false,false,false,false};
     public boolean gamestart =false;
 
 
@@ -46,70 +43,70 @@ public class ServerData {
 
         while(!gameEnded) {
             if (turnorderturn == 1 && gamestart) {
-                p1 = false;
-                p2 = false;
-                p3 = false;
-                p4 = true;
+                playerturn[0] = false;
+                playerturn[1] = false;
+                playerturn[2] = false;
+                playerturn[3] = true;
 
-                    if (endTurn && p4) {
-                        p1 = false;
-                        p2 = false;
-                        p3 = true;
-                        p4 = false;
+                    if (endTurn && playerturn[3]) {
+                        playerturn[0] = false;
+                        playerturn[1] = false;
+                        playerturn[2] = true;
+                        playerturn[3] = false;
                         endTurn = false;
                     }
-                    if (endTurn && p3) {
-                        p1 = false;
-                        p2 = true;
-                        p3 = false;
-                        p4 = false;
+                    if (endTurn && playerturn[2]) {
+                        playerturn[0] = false;
+                        playerturn[1] = true;
+                        playerturn[2] = false;
+                        playerturn[3] = false;
                         endTurn = false;
                     }
-                    if (endTurn && p2) {
-                        p1 = true;
-                        p2 = false;
-                        p3 = false;
-                        p4 = false;
+                    if (endTurn && playerturn[1]) {
+                        playerturn[0] = true;
+                        playerturn[1] = false;
+                        playerturn[2] = false;
+                        playerturn[3] = false;
                         endTurn = false;
                     }
-                    if(endTurn && p1){
-                        p1 = true;
-                        p2 = false;
-                        p3 = false;
-                        p4 = false;
+                    if(endTurn && playerturn[0]){
+                        playerturn[0] = true;
+                        playerturn[1] = false;
+                        playerturn[2] = false;
+                        playerturn[3] = false;
                         endTurn = false;
-                        turn++;
+                        turnorderturn++;
                     }
             }
 
             if (turnorderturn == 2) {
-                    if(endTurn && p1){
-                        p1 = false;
-                        p2 = true;
-                        p3 = false;
-                        p4 = false;
+                    if(endTurn && playerturn[0]){
+                        playerturn[0] = false;
+                        playerturn[1] = true;
+                        playerturn[2] = false;
+                        playerturn[3] = false;
                         endTurn = false;
                     }
 
-                    if (endTurn && p2) {
-                        p1 = false;
-                        p2 = false;
-                        p3 = true;
-                        p4 = false;
+                    if (endTurn && playerturn[1]) {
+                        playerturn[0] = false;
+                        playerturn[1] = false;
+                        playerturn[2] = true;
+                        playerturn[3] = false;
                         endTurn = false;
                     }
-                    if (endTurn && p3) {
-                        p1 = false;
-                        p2 = false;
-                        p3 = false;
-                        p4 = true;
+                    if (endTurn && playerturn[2]) {
+                        playerturn[0] = false;
+                        playerturn[1] = false;
+                        playerturn[2] = false;
+                        playerturn[3] = true;
                         endTurn = false;
                     }
-                    if (endTurn && p4) {
-                        p1 = true;
-                        p2 = false;
-                        p3 = false;
-                        p4 = false;
+                    if (endTurn && playerturn[3]) {
+                        playerturn[0] = true;
+                        playerturn[1] = false;
+                        playerturn[2] = false;
+                        playerturn[3] = false;
                         endTurn = false;
                     }
             }
