@@ -30,7 +30,6 @@ public class GameServer extends Listener {
         server = new Server(16384, 2048);
 
         //Classes that needs to be registered into KryoNet so they can be sent over Kryonet.
-        server.getKryo().register(PlayerStats.class);
         server.getKryo().register(int[].class);
         server.getKryo().register(ServerData.class);
         server.getKryo().register(ClientData.class);
