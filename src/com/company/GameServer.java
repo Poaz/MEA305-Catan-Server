@@ -79,7 +79,6 @@ public class GameServer extends Listener {
         //Updating the newest player with the latest data, such as names and chat text.
         server.sendToAllTCP(data);
 
-
         //Prints to server console [DEBUGGING]
         Log.set(Log.LEVEL_DEBUG);
 
@@ -121,9 +120,14 @@ public class GameServer extends Listener {
             //Chat text.
             data.textToRender = playerPacket.nstextPackage;
 
+            if(playerPacket.diceRoll){
+                data.roll();
+                playerPacket.diceRoll = false;
+                data.diceRoll = false;
+            }
+
             //Sends out the data packet
             server.sendToAllTCP(data);
-
 
             //Prints to server console
             System.out.println("[Server]: Received a packet from ID: " + (c.getID() - 1));

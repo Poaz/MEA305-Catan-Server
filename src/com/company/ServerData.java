@@ -18,7 +18,7 @@ public class ServerData {
     public String[] oldText = new String[10];
     public ArrayList<Integer> cards = new ArrayList<Integer>();
     public int[] serializedHouse = new int[2];
-    public boolean endTurn;
+    public boolean endTurn, diceRoll;
 
     Integer[] yieldNumbers = {2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12};
     ArrayList<Integer> listOfYieldNumbers = new ArrayList<Integer>(Arrays.asList(yieldNumbers));
