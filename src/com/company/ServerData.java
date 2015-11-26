@@ -1,5 +1,7 @@
 package com.company;
 
+import com.esotericsoftware.kryonet.Connection;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -17,13 +19,13 @@ public class ServerData {
     public String[] textToRender = new String[]{"", "", ""};
     public String[] oldText = new String[10];
     public ArrayList<Integer> cards = new ArrayList<Integer>();
-    public int[] serializedHouse = new int[2];
-    public boolean endTurn, diceRoll;
-
+    public int[] serializedHouse = new int[]{0,0};
+    public boolean endTurn = false, diceRoll;
     public int turnorderturn = 1;
     public boolean gameEnded = false;
     public boolean[] playerturn = new boolean[]{false,false,false,false};
     public boolean gamestart =false;
+    public Connection c;
 
 
     Integer[] yieldNumbers = {2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12};

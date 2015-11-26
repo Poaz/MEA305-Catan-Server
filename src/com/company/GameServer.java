@@ -1,6 +1,5 @@
 package com.company;
 
-import com.esotericsoftware.kryo.Registration;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
@@ -9,27 +8,22 @@ import com.esotericsoftware.minlog.Log;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class GameServer extends Listener {
 
     //Initializing Port and server.
     private static final int port = 23820;
-    //Containing connections in a HashMap.
-    private static final Map<Integer, PlayerStats> players = new HashMap<Integer, PlayerStats>();
     private static Server server;
     //Making a Server object.
     ServerData data = new ServerData();
     //Making a GUI object
     GuiServer GUI = new GuiServer();
     private boolean GameStarted = true;
-    private Registration register;
-    boolean firstJoin = true;
+    private boolean firstJoin = true;
 
     GameServer() {
     }
-
 
     public static void main(String[] args) throws IOException {
         //Initialize the server
@@ -59,26 +53,6 @@ public class GameServer extends Listener {
 
     @Override
     public void connected(Connection c) {
-        /*
-        //Making a player object
-        PlayerStats player = new PlayerStats();
-
-        //Making a second player object
-        PlayerStats packet = new PlayerStats();
-
-        //Setting the ID in the PacketAddPlayer class to whatever ID comes from the connection.
-        packet.ID = c.getID();
-
-        //Sends all a new list of connection names.
-        server.sendToAllExceptTCP(c.getID(), packet);
-
-        //Sets players in player map.
-        players.put(c.getID(), player);
-        */
-
-        //Updating the newest player with the latest data, such as names and chat text.
-        server.sendToAllTCP(data);
-
         //Prints to server console [DEBUGGING]
         Log.set(Log.LEVEL_DEBUG);
 
@@ -86,6 +60,8 @@ public class GameServer extends Listener {
             data.ShuffleMap();
             firstJoin = false;
         }
+        //Updating the newest player with the latest data, such as names and chat text.
+        server.sendToAllTCP(data);
     }
 
     @Override
@@ -109,7 +85,7 @@ public class GameServer extends Listener {
             data.resourcesOnHand[c.getID() - 1] = playerPacket.nsresources_on_hand;
             //Turn order, determined by player ID
             //SharedData.turn = playerPacket.
-            data.ID = c.getID();
+            //data.ID = c.getID();
 
             data.endTurn = playerPacket.endTurn;
 
@@ -152,6 +128,11 @@ public class GameServer extends Listener {
         }
     }
 
+    @Override
+    public void disconnected(Connection c) {
+
+    }
+
     public void update() {
         GUI.update(data.names, data.points, data.knightsPlayed, data.resourcesOnHand, data.longestRoad, data.turn);
         GUI.repaint();
@@ -159,21 +140,6 @@ public class GameServer extends Listener {
         GUI.setVisible(true);
         GUI.setSize(1000, 200);
         GUI.setTitle("Gui Server");
-    }
-
-    @Override
-    public void disconnected(Connection c) {
-        //Removes a player from the map
-        players.remove(c.getID());
-        //Makes a packet of PlayerStats
-        PlayerStats packet = new PlayerStats();
-        //Gets ID
-        packet.ID = c.getID();
-        //Sends all a new list of connection names.
-        server.sendToAllExceptTCP(c.getID(), packet);
-
-        //Prints to server console
-        //System.out.println("Connection dropped.");
     }
 }
 
