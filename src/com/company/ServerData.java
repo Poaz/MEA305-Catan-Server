@@ -24,7 +24,7 @@ public class ServerData {
     public boolean endTurn = false, diceRoll;
     public int turnorderturn = 1;
     public boolean gameEnded = false;
-    public boolean[] playerturn = new boolean[]{false, false, false, false};
+    public boolean[] playerturn = new boolean[]{true, false, false, false};
     public Connection c;
     boolean first = true;
 
@@ -164,6 +164,10 @@ public class ServerData {
             oldText[1] = textToRender[1];
             oldText[0] = textToRender[2];
         }
+    }
+
+    public void trade(){
+
     }
 
     public String[] getNames() {
