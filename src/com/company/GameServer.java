@@ -8,6 +8,7 @@ import com.esotericsoftware.minlog.Log;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class GameServer extends Listener {
@@ -58,6 +59,7 @@ public class GameServer extends Listener {
         if(firstJoin){
             data.ShuffleMap();
             firstJoin = false;
+            data.TurnOrder();
         }
         //Updating the newest player with the latest data, such as names and chat text.
         server.sendToAllTCP(data);
@@ -66,6 +68,8 @@ public class GameServer extends Listener {
     @Override
     public void received(Connection c, Object o) {
         data.CheckLobbyReady();
+        data.TurnOrder();
+        System.out.println(Arrays.toString(data.playerturn));
 
         if (o instanceof ClientData) {
             //Makes a packet of the ClientData class and sets it equal to the incoming object.
@@ -82,17 +86,16 @@ public class GameServer extends Listener {
             data.longestRoad[c.getID() - 1] = playerPacket.nslength_of_road;
             //Resources on hand.
             data.resourcesOnHand[c.getID() - 1] = playerPacket.nsresources_on_hand;
-            //Turn order, determined by player ID
-            //SharedData.turn = playerPacket.
-            //data.ID = c.getID();
+            //
+            data.serializedHouse = playerPacket.serializedHouse;
+
+            data.serializedRoad = playerPacket.serializedRoad;
 
             data.endTurn = playerPacket.endTurn;
 
             if(playerPacket.endTurn){
                 data.TurnOrder();
             }
-
-            data.serializedHouse = playerPacket.serializedHouse;
 
             //Checks if the received packet boolean is true.
             if (playerPacket.nsTextSent) {
@@ -105,6 +108,8 @@ public class GameServer extends Listener {
                 data.roll();
                 playerPacket.diceRoll = false;
                 data.diceRoll = false;
+                System.out.println(data.die1);
+                System.out.println(data.die2);
             }
 
             //Sends out the data packet
@@ -121,7 +126,8 @@ public class GameServer extends Listener {
         }
 
         if (data.StartGame && GameStarted) {
-            server.sendToAllExceptTCP(c.getID(), data);
+            data.gameStart = true;
+            data.TurnOrder();
             server.sendToAllTCP(data);
             GameStarted = false;
         }

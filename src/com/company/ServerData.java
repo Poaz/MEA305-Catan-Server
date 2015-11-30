@@ -15,17 +15,18 @@ public class ServerData {
     public boolean[] lobbyReadyAll = new boolean[]{false, false, false, false};
     public int longestRoad[] = new int[]{0, 0, 0, 0};
     public int turn, die1, die2, ID, cardID;
-    public boolean StartGame = false;
+    public boolean StartGame = false, gameStart = false;
     public String[] textToRender = new String[]{"", "", ""};
     public String[] oldText = new String[10];
     public ArrayList<Integer> cards = new ArrayList<Integer>();
     public int[] serializedHouse = new int[]{0,0};
+    public int[] serializedRoad = new int[] {0,0};
     public boolean endTurn = false, diceRoll;
     public int turnorderturn = 1;
     public boolean gameEnded = false;
-    public boolean[] playerturn = new boolean[]{false,false,false,false};
-    public boolean gamestart =false;
+    public boolean[] playerturn = new boolean[]{false, false, false, false};
     public Connection c;
+    boolean first = true;
 
 
     Integer[] yieldNumbers = {2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12};
@@ -43,78 +44,58 @@ public class ServerData {
 
     public void TurnOrder() {
 
-        while(!gameEnded) {
-            if (turnorderturn == 1 && gamestart) {
-                playerturn[0] = false;
-                playerturn[1] = false;
+            if (turnorderturn == 1 && gameStart && first) {
                 playerturn[2] = false;
                 playerturn[3] = true;
-
-                    if (endTurn && playerturn[3]) {
-                        playerturn[0] = false;
-                        playerturn[1] = false;
-                        playerturn[2] = true;
-                        playerturn[3] = false;
-                        endTurn = false;
-                    }
-                    if (endTurn && playerturn[2]) {
-                        playerturn[0] = false;
-                        playerturn[1] = true;
-                        playerturn[2] = false;
-                        playerturn[3] = false;
-                        endTurn = false;
-                    }
-                    if (endTurn && playerturn[1]) {
-                        playerturn[0] = true;
-                        playerturn[1] = false;
-                        playerturn[2] = false;
-                        playerturn[3] = false;
-                        endTurn = false;
-                    }
-                    if(endTurn && playerturn[0]){
-                        playerturn[0] = true;
-                        playerturn[1] = false;
-                        playerturn[2] = false;
-                        playerturn[3] = false;
-                        endTurn = false;
-                        turnorderturn++;
-                    }
+                first = false;
             }
+             if(turnorderturn == 1) {
+            if (endTurn && playerturn[3]) {
+                playerturn[2] = true;
+                playerturn[3] = false;
+                endTurn = false;
+            }
+            if (endTurn && playerturn[2]) {
+                playerturn[1] = true;
+                playerturn[2] = false;
+                endTurn = false;
+            }
+            if (endTurn && playerturn[1]) {
+                playerturn[0] = true;
+                playerturn[1] = false;
+                endTurn = false;
+            }
+            if (endTurn && playerturn[0]) {
+                playerturn[0] = true;
+                endTurn = false;
+                turnorderturn++;
+            }
+        }
 
             if (turnorderturn == 2) {
                     if(endTurn && playerturn[0]){
                         playerturn[0] = false;
                         playerturn[1] = true;
-                        playerturn[2] = false;
-                        playerturn[3] = false;
                         endTurn = false;
                     }
 
                     if (endTurn && playerturn[1]) {
-                        playerturn[0] = false;
                         playerturn[1] = false;
                         playerturn[2] = true;
-                        playerturn[3] = false;
                         endTurn = false;
                     }
                     if (endTurn && playerturn[2]) {
-                        playerturn[0] = false;
-                        playerturn[1] = false;
                         playerturn[2] = false;
                         playerturn[3] = true;
                         endTurn = false;
                     }
                     if (endTurn && playerturn[3]) {
                         playerturn[0] = true;
-                        playerturn[1] = false;
-                        playerturn[2] = false;
                         playerturn[3] = false;
                         endTurn = false;
                     }
             }
         }
-
-    }
 
     public void DevCard() {
         for (int i = 0; i < 13; i++) {
