@@ -8,7 +8,7 @@ public class GuiServer extends JFrame{
     JLabel p2, p2name, p2connected, p2point, p2knights, p2resource, p2longestRoad, p2gameStarted;
     JLabel p3, p3name, p3connected, p3point, p3knights, p3resource, p3longestRoad, p3gameStarted;
     JLabel p4, p4name, p4connected, p4point, p4knights, p4resource, p4longestRoad, p4gameStarted;
-    JLabel playerNumber,names,points,knightsOnHand,resourcesOnHand,longestRoad;
+    JLabel playerNumber,names,points,knightsOnHand,resourcesOnHand,longestRoad,turnOrder;
     boolean hasRun = false;
 
 
@@ -64,8 +64,8 @@ public class GuiServer extends JFrame{
 
     }
 
-    public void update(String[] name, int[] point, int[] knightsPlayed, int[] resources, int[] longestRoads, int turn){
-        setLayout(new GridLayout(6,4));
+    public void update(String[] name, int[] point, int[] knightsPlayed, int[] resources, int[] longestRoads, boolean[] turn){
+        setLayout(new GridLayout(7,4));
         //playerNumber = new JLabel("Player number:");
         playerNumber.setText("Player Number:");
         names.setText("Names of Players:");
@@ -73,34 +73,35 @@ public class GuiServer extends JFrame{
         knightsOnHand.setText("Number of Knights on Hand:");
         resourcesOnHand.setText("Number of Resources on Hand:");
         longestRoad.setText("Number of Roads Connected:");
+        turnOrder.setText("Turn Order");
         p1.setText("1");
         p1name.setText(name[0]);
         p1point.setText(Integer.toString(point[0]));
         p1knights.setText(Integer.toString(knightsPlayed[0]));
         p1resource.setText(Integer.toString(resources[0]));
         p1longestRoad.setText(Integer.toString(longestRoads[0]));
-        p1gameStarted.setText(Integer.toString(turn));
+        p1gameStarted.setText(Boolean.toString(turn[1]));
         p2.setText("2");
         p2name.setText(name[1]);
         p2point.setText(Integer.toString(point[1]));
         p2knights.setText(Integer.toString(knightsPlayed[1]));
         p2resource.setText(Integer.toString(resources[1]));
         p2longestRoad.setText(Integer.toString(longestRoads[1]));
-        p2gameStarted.setText(Integer.toString(turn));
+        p2gameStarted.setText(Boolean.toString(turn[2]));
         p3.setText("3");
         p3name.setText(name[2]);
         p3point.setText(Integer.toString(point[2]));
         p3knights.setText(Integer.toString(knightsPlayed[2]));
         p3resource.setText(Integer.toString(resources[2]));
         p3longestRoad.setText(Integer.toString(longestRoads[2]));
-        p3gameStarted.setText(Integer.toString(turn));
+        p3gameStarted.setText(Boolean.toString(turn[3]));
         p4.setText("4");
         p4name.setText(name[3]);
         p4point.setText(Integer.toString(point[3]));
         p4knights.setText(Integer.toString(knightsPlayed[3]));
         p4resource.setText(Integer.toString(resources[3]));
         p4longestRoad.setText(Integer.toString(longestRoads[3]));
-        p4gameStarted.setText(Integer.toString(turn));
+        p4gameStarted.setText(Boolean.toString(turn[4]));
         //this.validate();
         //this.repaint();
         JLabel[] labelData ={
@@ -110,6 +111,7 @@ public class GuiServer extends JFrame{
                 knightsOnHand, p1knights, p2knights, p3knights, p4knights,
                 resourcesOnHand, p1resource, p2resource, p3resource, p4resource,
                 longestRoad, p1longestRoad, p2longestRoad, p3longestRoad, p4longestRoad,
+                turnOrder, p1gameStarted, p2gameStarted, p3gameStarted, p4gameStarted
         };
 
         if(!hasRun){
