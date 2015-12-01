@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae1b3ad-9e5b-4b3f-8ba9-a5d79d3e4f32" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ClientData.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ClientData.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/GameServer.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/GameServer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ServerData.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ServerData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ClientData.java" afterPath="$PROJECT_DIR$/src/com/company/ClientData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/GameServer.java" afterPath="$PROJECT_DIR$/src/com/company/GameServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ServerData.java" afterPath="$PROJECT_DIR$/src/com/company/ServerData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -37,9 +40,12 @@
       <file leaf-file-name="GameServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/GameServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1762" max-vertical-offset="2516">
-              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="2703">
+              <caret line="92" column="76" selection-start-line="92" selection-start-column="76" selection-end-line="92" selection-end-column="76" />
+              <folding>
+                <element signature="method#disconnected#0;class#GameServer#0" expanded="false" />
+                <element signature="method#update#0;class#GameServer#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,9 +53,18 @@
       <file leaf-file-name="ServerData.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/ServerData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="3264">
-              <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-              <folding />
+            <state vertical-scroll-proportion="0.60602677" vertical-offset="307" max-vertical-offset="1445">
+              <caret line="128" column="45" selection-start-line="128" selection-start-column="45" selection-end-line="128" selection-end-column="45" />
+              <folding>
+                <element signature="method#ServerData#0;class#ServerData#0" expanded="false" />
+                <element signature="method#TurnOrder#0;class#ServerData#0" expanded="false" />
+                <element signature="method#DevCard#0;class#ServerData#0" expanded="false" />
+                <element signature="method#DrawDev#0;class#ServerData#0" expanded="false" />
+                <element signature="method#ShuffleMap#0;class#ServerData#0" expanded="false" />
+                <element signature="method#CheckLobbyReady#0;class#ServerData#0" expanded="false" />
+                <element signature="method#updateOldMessages#0;class#ServerData#0" expanded="false" />
+                <element signature="method#trade#0;class#ServerData#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,9 +72,11 @@
       <file leaf-file-name="ClientData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ClientData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="442">
-              <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="442">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <element signature="method#ClientData#0;class#ClientData#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,9 +84,13 @@
       <file leaf-file-name="GuiServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/GuiServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="746" max-vertical-offset="2210">
-              <caret line="68" column="36" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="493">
+              <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+              <folding>
+                <element signature="method#GuiServer#0;class#GuiServer#0" expanded="false" />
+                <element signature="method#update#0;class#GuiServer#0" expanded="false" />
+                <element signature="method#update#1;class#GuiServer#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,9 +131,9 @@
         <option value="$PROJECT_DIR$/src/com/company/SharedData.java" />
         <option value="$PROJECT_DIR$/src/com/company/GUI.java" />
         <option value="$PROJECT_DIR$/src/com/company/PlayerStats.java" />
-        <option value="$PROJECT_DIR$/src/com/company/ClientData.java" />
-        <option value="$PROJECT_DIR$/src/com/company/GameServer.java" />
         <option value="$PROJECT_DIR$/src/com/company/GuiServer.java" />
+        <option value="$PROJECT_DIR$/src/com/company/GameServer.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ClientData.java" />
         <option value="$PROJECT_DIR$/src/com/company/ServerData.java" />
       </list>
     </option>
@@ -153,6 +174,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -181,6 +203,100 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="kryonet-2.21-all.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kryonet-2.21-all.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kryonet-2.21-all.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="esotericsoftware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kryonet-2.21-all.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="esotericsoftware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kryonet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kryonet-2.21-all.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="esotericsoftware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kryo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MEA305AWESOMESHITPROJECT-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -191,7 +307,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -205,7 +320,7 @@
     <property name="recentsLimit" value="5" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Custom" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MEA305AWESOMESHITPROJECT-CLIENT" />
@@ -592,7 +707,12 @@
       <workItem from="1448540807585" duration="6896000" />
       <workItem from="1448873235986" duration="18092000" />
       <workItem from="1448892033647" duration="1372000" />
-      <workItem from="1448893432107" duration="6000" />
+      <workItem from="1448893432107" duration="34000" />
+      <workItem from="1448959961734" duration="1069000" />
+      <workItem from="1448961051578" duration="173000" />
+      <workItem from="1448961237567" duration="268000" />
+      <workItem from="1448961519980" duration="8489000" />
+      <workItem from="1448975455864" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="Server and GUI">
       <created>1446311622858</created>
@@ -840,11 +960,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448892579452</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Server Stuff">
+      <created>1448893452776</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1448893452776</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140613000" />
+    <option name="totallyTimeSpent" value="150647000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -882,7 +1008,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16991343" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60281384" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13539445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15298508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -895,7 +1021,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989071" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32575756" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28679654" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21969697" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15151516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -930,7 +1056,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/GameServer.java</url>
+          <line>4</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -939,35 +1073,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/GameServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2516">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ServerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="3468">
-          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ClientData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="442">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/GuiServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="2193">
           <caret line="102" column="54" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
-          <folding />
+          <folding>
+            <element signature="method#GuiServer#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#1;class#GuiServer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -975,7 +1089,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2431">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#disconnected#0;class#GameServer#0" expanded="false" />
+            <element signature="method#update#0;class#GameServer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -983,7 +1100,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3519">
           <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-          <folding />
+          <folding>
+            <element signature="method#ServerData#0;class#ServerData#0" expanded="false" />
+            <element signature="method#TurnOrder#0;class#ServerData#0" expanded="false" />
+            <element signature="method#DevCard#0;class#ServerData#0" expanded="false" />
+            <element signature="method#DrawDev#0;class#ServerData#0" expanded="false" />
+            <element signature="method#ShuffleMap#0;class#ServerData#0" expanded="false" />
+            <element signature="method#CheckLobbyReady#0;class#ServerData#0" expanded="false" />
+            <element signature="method#updateOldMessages#0;class#ServerData#0" expanded="false" />
+            <element signature="method#trade#0;class#ServerData#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -991,7 +1117,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="476">
           <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="method#ClientData#0;class#ClientData#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -999,7 +1127,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="566" max-vertical-offset="2159">
           <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="method#GuiServer#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#1;class#GuiServer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1007,7 +1139,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3519">
           <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="method#ServerData#0;class#ServerData#0" expanded="false" />
+            <element signature="method#TurnOrder#0;class#ServerData#0" expanded="false" />
+            <element signature="method#DevCard#0;class#ServerData#0" expanded="false" />
+            <element signature="method#DrawDev#0;class#ServerData#0" expanded="false" />
+            <element signature="method#ShuffleMap#0;class#ServerData#0" expanded="false" />
+            <element signature="method#CheckLobbyReady#0;class#ServerData#0" expanded="false" />
+            <element signature="method#updateOldMessages#0;class#ServerData#0" expanded="false" />
+            <element signature="method#trade#0;class#ServerData#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,7 +1156,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="493">
           <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="method#ClientData#0;class#ClientData#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1023,7 +1166,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="2193">
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiServer#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#1;class#GuiServer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,7 +1178,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1394">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiServer#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#1;class#GuiServer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1039,7 +1190,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiServer#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#1;class#GuiServer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1068,7 +1223,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiServer#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#1;class#GuiServer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1247,13 +1406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/kryonet-2.21-all.jar!/com/esotericsoftware/kryonet/Connection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9763514" vertical-offset="1105" max-vertical-offset="5695">
-          <caret line="53" column="73" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/kryonet-2.21-all.jar!/com/esotericsoftware/jsonbeans/ObjectMap.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.905405" vertical-offset="11886" max-vertical-offset="12478">
@@ -1282,35 +1434,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ClientData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
+    <entry file="uml://JAVA/com.company.GameServer">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.company.GameServer</OriginalElement>
+          <nodes>
+            <node x="" y="">com.esotericsoftware.kryonet.Listener.QueuedListener</node>
+            <node x="" y="">com.esotericsoftware.kryonet.Listener.ReflectionListener</node>
+            <node x="" y="">com.esotericsoftware.kryonet.Listener.ThreadedListener</node>
+            <node x="" y="">com.esotericsoftware.kryonet.Listener</node>
+            <node x="" y="">com.esotericsoftware.kryonet.Listener.LagListener</node>
+            <node x="" y="">com.company.GameServer</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="368.0" y="335.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/GameServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1762" max-vertical-offset="2516">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
+    <entry file="uml://MODULES/mdl-MEA305AWESOMESHITPROJECT-Server">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-MEA305AWESOMESHITPROJECT-Server</OriginalElement>
+          <nodes>
+            <node x="" y="">lib-kryonet-2.21-all</node>
+            <node x="" y="">mdl-MEA305AWESOMESHITPROJECT-Server</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="145.0" y="15.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Test dependencies</Category>
+            <Category>Libraries</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.company">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.company</OriginalElement>
+          <nodes>
+            <node x="" y="">com.company.ClientData</node>
+            <node x="" y="">com.company.GuiServer</node>
+            <node x="" y="">com.company.GameServer</node>
+            <node x="" y="">com.company.ServerData</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.4766867800329124" x="342.0" y="675.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/GuiServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="746" max-vertical-offset="2210">
-          <caret line="68" column="36" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+          <folding>
+            <element signature="method#GuiServer#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#0;class#GuiServer#0" expanded="false" />
+            <element signature="method#update#1;class#GuiServer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/GameServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="2703">
+          <caret line="92" column="76" selection-start-line="92" selection-start-column="76" selection-end-line="92" selection-end-column="76" />
+          <folding>
+            <element signature="method#disconnected#0;class#GameServer#0" expanded="false" />
+            <element signature="method#update#0;class#GameServer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/kryonet-2.21-all.jar!/com/esotericsoftware/kryonet/Connection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.1127167" vertical-offset="153" max-vertical-offset="5695">
+          <caret line="117" column="33" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ClientData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="method#ClientData#0;class#ClientData#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ServerData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="3264">
-          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-          <folding />
+        <state vertical-scroll-proportion="0.60602677" vertical-offset="307" max-vertical-offset="1445">
+          <caret line="128" column="45" selection-start-line="128" selection-start-column="45" selection-end-line="128" selection-end-column="45" />
+          <folding>
+            <element signature="method#ServerData#0;class#ServerData#0" expanded="false" />
+            <element signature="method#TurnOrder#0;class#ServerData#0" expanded="false" />
+            <element signature="method#DevCard#0;class#ServerData#0" expanded="false" />
+            <element signature="method#DrawDev#0;class#ServerData#0" expanded="false" />
+            <element signature="method#ShuffleMap#0;class#ServerData#0" expanded="false" />
+            <element signature="method#CheckLobbyReady#0;class#ServerData#0" expanded="false" />
+            <element signature="method#updateOldMessages#0;class#ServerData#0" expanded="false" />
+            <element signature="method#trade#0;class#ServerData#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1393,6 +1647,17 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>kryonet-2.21-all</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
