@@ -25,9 +25,12 @@ public class ServerData {
     public boolean endTurn = false, diceRoll, diceUsed;
     public int turnorderturn = 1;
     public boolean gameEnded = false;
-    public boolean[] playerturn = new boolean[]{false, false, false, false};
+    public boolean[] playerturn = new boolean[]{true, false, false, false};
     public Connection c;
     boolean first = true;
+    public int[] rolledDiceStatistics = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
+    public int rolled = 0;
+    public int[] procentValue = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
 
 
 
@@ -127,6 +130,7 @@ public class ServerData {
 
         die1 = (int) (Math.random() * 6) + 1;
         die2 = (int) (Math.random() * 6) + 1;
+        rolledDiceStatistics[die1+die2-1]++;
     }
 
     public void ShuffleMap() {

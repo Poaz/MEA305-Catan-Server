@@ -85,6 +85,7 @@ public class GameServer extends Listener {
             data.names[c.getID() - 1] = playerPacket.nsname;
             //Points acquired by each player.
             data.points[c.getID() - 1] = playerPacket.nspoint;
+            //Addeding the dice rolled from the server to the statistics
             //Knights played by player, in an int array.
             data.knightsPlayed[c.getID() - 1] = playerPacket.nsknights_played;
             //Lobby Ready boolean array
