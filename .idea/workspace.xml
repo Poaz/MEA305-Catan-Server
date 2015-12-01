@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae1b3ad-9e5b-4b3f-8ba9-a5d79d3e4f32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ClientData.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ClientData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/GameServer.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/GameServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ServerData.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ServerData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ClientData.java" afterPath="$PROJECT_DIR$/src/com/company/ClientData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/GameServer.java" afterPath="$PROJECT_DIR$/src/com/company/GameServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ServerData.java" afterPath="$PROJECT_DIR$/src/com/company/ServerData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MEA305AWESOMESHITPROJECT-Server.iws" />
@@ -712,7 +706,7 @@
       <workItem from="1448961519980" duration="8489000" />
       <workItem from="1448975455864" duration="7000" />
       <workItem from="1448975526307" duration="1917000" />
-      <workItem from="1448977462707" duration="191000" />
+      <workItem from="1448977462707" duration="380000" />
     </task>
     <task id="LOCAL-00001" summary="Server and GUI">
       <created>1446311622858</created>
@@ -966,11 +960,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448893452776</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Added dice stats on the server">
+      <created>1448977702174</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1448977702174</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152755000" />
+    <option name="totallyTimeSpent" value="152944000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1049,7 +1049,8 @@
     <MESSAGE value="HasRun enabled" />
     <MESSAGE value="old gui gone, reformat of code" />
     <MESSAGE value="Server Stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server Stuff" />
+    <MESSAGE value="Added dice stats on the server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dice stats on the server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
