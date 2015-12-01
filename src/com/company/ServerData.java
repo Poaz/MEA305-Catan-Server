@@ -29,8 +29,6 @@ public class ServerData {
     public Connection c;
     boolean first = true;
     public int[] rolledDiceStatistics = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
-    public int rolled = 0;
-    public int[] procentValue = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
 
 
 
@@ -52,26 +50,31 @@ public class ServerData {
             if (turnorderturn == 1 && gameStart && first) {
                 playerturn[2] = false;
                 playerturn[3] = true;
+                turn = 3;
                 first = false;
             }
              if(turnorderturn == 1) {
             if (endTurn && playerturn[3]) {
                 playerturn[2] = true;
                 playerturn[3] = false;
+                turn = 2;
                 endTurn = false;
             }
             if (endTurn && playerturn[2]) {
                 playerturn[1] = true;
                 playerturn[2] = false;
+                turn = 1;
                 endTurn = false;
             }
             if (endTurn && playerturn[1]) {
                 playerturn[0] = true;
                 playerturn[1] = false;
+                turn = 0;
                 endTurn = false;
             }
             if (endTurn && playerturn[0]) {
                 playerturn[0] = true;
+                turn = 0;
                 endTurn = false;
                 turnorderturn++;
             }
@@ -81,21 +84,25 @@ public class ServerData {
                     if(endTurn && playerturn[0]){
                         playerturn[0] = false;
                         playerturn[1] = true;
+                        turn = 1;
                         endTurn = false;
                     }
 
                     if (endTurn && playerturn[1]) {
                         playerturn[1] = false;
                         playerturn[2] = true;
+                        turn = 2;
                         endTurn = false;
                     }
                     if (endTurn && playerturn[2]) {
                         playerturn[2] = false;
                         playerturn[3] = true;
+                        turn = 3;
                         endTurn = false;
                     }
                     if (endTurn && playerturn[3]) {
                         playerturn[0] = true;
+                        turn = 0;
                         playerturn[3] = false;
                         endTurn = false;
                     }
