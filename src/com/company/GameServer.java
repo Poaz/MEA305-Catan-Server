@@ -8,7 +8,6 @@ import com.esotericsoftware.minlog.Log;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class GameServer extends Listener {
 
@@ -31,7 +30,6 @@ public class GameServer extends Listener {
         server = new Server(16384, 2048);
 
         //Classes that needs to be registered into KryoNet so they can be sent over Kryonet.
-
         server.getKryo().register(int[].class);
         server.getKryo().register(ServerData.class);
         server.getKryo().register(ClientData.class);
@@ -172,7 +170,9 @@ public class GameServer extends Listener {
     //Method which runs everytime a client disconnects.
     @Override
     public void disconnected(Connection c) {
-
+        System.out.println(c.getID());
+        c.close();
+        System.out.println(c.getID());
     }
 
     public void update() {
