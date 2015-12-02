@@ -8,6 +8,7 @@ import java.util.Collections;
 
 public class ServerData {
 
+    //Variables for all clients, this is the variables that controls the clients data, and state of the game.
     public String[] names = new String[]{"", "", "", ""};
     public int[] points = new int[]{0, 0, 0, 0};
     public int[] knightsPlayed = new int[]{0, 0, 0, 0};
