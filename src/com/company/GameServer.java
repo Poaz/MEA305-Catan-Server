@@ -108,6 +108,19 @@ public class GameServer extends Listener {
                 data.TurnOrder();
             }
 
+            //Checks if there should be a new trade
+            if (playerPacket.tradingWithyou[4]){
+                playerPacket.tradingWithyou[4] = false;
+                data.tradingWithyou = playerPacket.tradingWithyou;
+                data.tradingResources = playerPacket.tradingResources;
+            }
+            if (playerPacket.tradeHandled) {
+                playerPacket.tradeHandled = false;
+                data.tradeAccepted = playerPacket.tradeAccepted;
+                data.tradeHandled = playerPacket.tradeHandled;
+                data.tradingComplete = playerPacket.tradingCompelte;
+            }
+
             //Checks if the received packet boolean is true.
             if (playerPacket.nsTextSent) {
                 //Updates the messages in the chat
@@ -127,7 +140,10 @@ public class GameServer extends Listener {
                 data.diceRoll = false;
                 data.diceUsed = false;
             }
-
+            if (playerPacket.diceUsed) {
+                data.diceUsed = true;
+                playerPacket.diceUsed = false;
+            }
             //Sends out the data packet to all client via TCP
             server.sendToAllTCP(data);
 

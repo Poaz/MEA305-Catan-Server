@@ -22,13 +22,18 @@ public class ServerData {
     public int[] serializedHouse = new int[]{0,0};
     public int[] serializedRoad = new int[] {0,0};
     public int serializedCity = 0;
-    public boolean endTurn = false, diceRoll, diceUsed;
+    public boolean endTurn = false, diceRoll;
+    public boolean diceUsed = true;
     public int turnorderturn = 1;
     public boolean gameEnded = false;
     public boolean[] playerturn = new boolean[]{true, false, false, false};
     public Connection c;
     boolean first = true;
     public int[] rolledDiceStatistics = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
+    public int[] tradingResources = new int[10];
+    public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false};
+    public boolean tradeHandled = true;
+    public boolean tradeAccepted, tradingComplete;
 
 
 
@@ -46,14 +51,13 @@ public class ServerData {
     }
 
     public void TurnOrder() {
-
-            if (turnorderturn == 1 && gameStart && first) {
-                playerturn[2] = false;
-                playerturn[3] = true;
-                turn = 3;
-                first = false;
-            }
-             if(turnorderturn == 1) {
+        if (turnorderturn == 1 && gameStart && first) {
+            playerturn[2] = false;
+            playerturn[3] = true;
+            turn = 3;
+            first = false;
+        }
+        if (turnorderturn == 1) {
             if (endTurn && playerturn[3]) {
                 playerturn[2] = true;
                 playerturn[3] = false;
@@ -80,34 +84,34 @@ public class ServerData {
             }
         }
 
-            if (turnorderturn == 2) {
-                    if(endTurn && playerturn[0]){
-                        playerturn[0] = false;
-                        playerturn[1] = true;
-                        turn = 1;
-                        endTurn = false;
-                    }
+        if (turnorderturn == 2) {
+            if (endTurn && playerturn[0]) {
+                playerturn[0] = false;
+                playerturn[1] = true;
+                turn = 1;
+                endTurn = false;
+            }
 
-                    if (endTurn && playerturn[1]) {
-                        playerturn[1] = false;
-                        playerturn[2] = true;
-                        turn = 2;
-                        endTurn = false;
-                    }
-                    if (endTurn && playerturn[2]) {
-                        playerturn[2] = false;
-                        playerturn[3] = true;
-                        turn = 3;
-                        endTurn = false;
-                    }
-                    if (endTurn && playerturn[3]) {
-                        playerturn[0] = true;
-                        turn = 0;
-                        playerturn[3] = false;
-                        endTurn = false;
-                    }
+            if (endTurn && playerturn[1]) {
+                playerturn[1] = false;
+                playerturn[2] = true;
+                turn = 2;
+                endTurn = false;
+            }
+            if (endTurn && playerturn[2]) {
+                playerturn[2] = false;
+                playerturn[3] = true;
+                turn = 3;
+                endTurn = false;
+            }
+            if (endTurn && playerturn[3]) {
+                playerturn[0] = true;
+                turn = 0;
+                playerturn[3] = false;
+                endTurn = false;
             }
         }
+    }
 
     public void DevCard() {
         for (int i = 0; i < 13; i++) {
