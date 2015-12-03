@@ -108,19 +108,22 @@ public class GameServer extends Listener {
             }
 
             //Checks if there should be a new trade
-            if (playerPacket.tradingWithyou[4]){
-                playerPacket.tradingWithyou[4] = false;
-                data.tradingWithyou = playerPacket.tradingWithyou;
+            if (playerPacket.sendTrade){
+                playerPacket.sendTrade = false;
+                data.targetPlayerTrade = playerPacket.targetPlayerTrade;
+                data.resetTradingResources = playerPacket.resetTradingResources;
                 int[] tmp_array = new int[10];
                 for (int i = 0; i < 5; i++) {
-                    tmp_array[i] = playerPacket.tradingResources[i+5];
-                    tmp_array[i+5] = playerPacket.tradingResources[i];
+                    tmp_array[i] = playerPacket.resourcesTrade[i+5];
+                    tmp_array[i+5] = playerPacket.resourcesTrade[i];
                 }
-                data.tradingResources = tmp_array;
+                data.resourcesTrade = tmp_array;
+                data.tradeResourcesToHandle = true;
             }
 
             if (playerPacket.updateCard) {
                 data.DrawDev();
+                System.out.println("Sending development card: " + data.cardID);
                 data.isCardUpToDate = true;
                 playerPacket.updateCard = false;
             }

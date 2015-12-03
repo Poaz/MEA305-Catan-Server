@@ -23,16 +23,21 @@ public class ServerData {
     public int[] serializedHouse = new int[]{0,0};
     public int[] serializedRoad = new int[] {0,0};
     public int serializedCity = 0;
+    public int serializedThief = 0;
     public boolean endTurn = false, diceRoll;
     public boolean diceUsed = true;
     public int turnorderturn = 1;
     public boolean gameEnded = false;
-    public boolean[] playerturn = new boolean[]{false, false, false, false};
+    public boolean[] playerturn = new boolean[]{true, false, false, false};
     public Connection c;
     boolean first = true;
     public int[] rolledDiceStatistics = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
-    public int[] tradingResources = new int[10];
-    public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false, false};
+    public boolean sendTrade = false;
+    public boolean resetTradingResources = true;
+    public int[] resourcesTrade = new int[10];
+    public int targetPlayerTrade;
+    public boolean tradeResourcesToHandle = false;
+    public boolean updateCard;
     public boolean isCardUpToDate;
 
 
@@ -48,7 +53,6 @@ public class ServerData {
             "Desert"));
 
     public ServerData() {
-        DevCard();
     }
 
     public void TurnOrder() {

@@ -12,11 +12,14 @@ public class ClientData {
     public boolean nsTextSent;
     public int[] serializedHouse = new int[]{0,0};
     public int[] serializedRoad = new int[] {0,0};
-    public int serializedCity = 0;
+    public int serializedCity = 99;
+    public int serializedThief = 99;
     public boolean endTurn = false, diceRoll, diceUsed;
     public boolean gameEnded = false;
-    public int[] tradingResources = new int[10];
-    public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false, false};
+    public boolean sendTrade = false;
+    public boolean resetTradingResources = true;
+    public int[] resourcesTrade = new int[10];
+    public int targetPlayerTrade;
     public boolean updateCard;
 
     public ClientData() {
