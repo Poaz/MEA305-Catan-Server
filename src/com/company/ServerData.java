@@ -33,6 +33,7 @@ public class ServerData {
     public int[] rolledDiceStatistics = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
     public int[] tradingResources = new int[10];
     public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false, false};
+    public boolean isCardUpToDate;
 
 
 

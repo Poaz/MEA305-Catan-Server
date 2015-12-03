@@ -61,6 +61,7 @@ public class GameServer extends Listener {
             data.ShuffleMap();
             //Updates the turnorder
             data.TurnOrder();
+            data.DevCard();
             firstJoin = false;
         }
         //Sends out
@@ -116,6 +117,11 @@ public class GameServer extends Listener {
                     tmp_array[i+5] = playerPacket.tradingResources[i];
                 }
                 data.tradingResources = tmp_array;
+            }
+
+            if (playerPacket.updateCard) {
+                data.DrawDev();
+                data.isCardUpToDate = true;
             }
 
             //Checks if the received packet boolean is true.
