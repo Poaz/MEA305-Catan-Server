@@ -139,6 +139,9 @@ public class ServerData {
     public void DrawDev() {
         cardID = cards.get(0);
         cards.remove(0);
+        if(cards.size() == 0){
+            DevCard();
+        }
     }
 
     public void roll() {
