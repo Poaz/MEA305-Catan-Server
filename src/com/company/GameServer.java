@@ -128,11 +128,12 @@ public class GameServer extends Listener {
 
             //Checks if the received packet boolean is true.
             if (playerPacket.nsTextSent) {
+
                 //Updates the messages in the chat
                 data.updateOldMessages();
+                //Chat text.
+                data.textToRender = playerPacket.nstextPackage;
             }
-            //Chat text.
-            data.textToRender = playerPacket.nstextPackage;
 
             //Checks if a client needs a new dice roll
             if(playerPacket.diceRoll){
@@ -151,12 +152,6 @@ public class GameServer extends Listener {
             }
             //Sends out the data packet to all client via TCP
             server.sendToAllTCP(data);
-
-            //Prints to server console
-            //System.out.println("[Server]: Received a packet from ID: " + (c.getID() - 1));
-            //System.out.println("[Server]: ID: " + (c.getID() - 1) + " *** Points: " + data.points[c.getID() - 1]);
-            //System.out.println("[Server]: ID: " + (c.getID() - 1) + " *** Name: " + data.names[c.getID() - 1]);
-            //System.out.println("[Server]: ID: " + (c.getID() - 1) + " *** Ready: " + data.lobbyReadyAll[c.getID() - 1]);
 
             //Updates the server GUI with the newest stats.
             update();
