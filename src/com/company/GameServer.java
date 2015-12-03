@@ -61,6 +61,7 @@ public class GameServer extends Listener {
             data.ShuffleMap();
             //Updates the turnorder
             data.TurnOrder();
+            data.DevCard();
             firstJoin = false;
         }
         //Sends out
