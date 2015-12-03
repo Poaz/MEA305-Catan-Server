@@ -32,9 +32,7 @@ public class ServerData {
     boolean first = true;
     public int[] rolledDiceStatistics = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
     public int[] tradingResources = new int[10];
-    public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false};
-    public boolean tradeHandled = true;
-    public boolean tradeAccepted, tradingComplete;
+    public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false, false};
 
 
 

@@ -110,13 +110,12 @@ public class GameServer extends Listener {
             if (playerPacket.tradingWithyou[4]){
                 playerPacket.tradingWithyou[4] = false;
                 data.tradingWithyou = playerPacket.tradingWithyou;
-                data.tradingResources = playerPacket.tradingResources;
-            }
-            if (playerPacket.tradeHandled) {
-                playerPacket.tradeHandled = false;
-                data.tradeAccepted = playerPacket.tradeAccepted;
-                data.tradeHandled = playerPacket.tradeHandled;
-                data.tradingComplete = playerPacket.tradingCompelte;
+                int[] tmp_array = new int[10];
+                for (int i = 0; i < 5; i++) {
+                    tmp_array[i] = playerPacket.tradingResources[i+5];
+                    tmp_array[i+5] = playerPacket.tradingResources[i];
+                }
+                data.tradingResources = tmp_array;
             }
 
             //Checks if the received packet boolean is true.

@@ -16,9 +16,7 @@ public class ClientData {
     public boolean endTurn = false, diceRoll, diceUsed;
     public boolean gameEnded = false;
     public int[] tradingResources = new int[10];
-    public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false};
-    public boolean tradeHandled = true;
-    public boolean tradeAccepted, tradingCompelte;
+    public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false, false};
 
     public ClientData() {
     }
