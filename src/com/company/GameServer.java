@@ -122,7 +122,9 @@ public class GameServer extends Listener {
             if (playerPacket.updateCard) {
                 data.DrawDev();
                 data.isCardUpToDate = true;
+                playerPacket.updateCard = false;
             }
+
 
             //Checks if the received packet boolean is true.
             if (playerPacket.nsTextSent) {
