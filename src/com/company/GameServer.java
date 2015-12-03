@@ -118,6 +118,11 @@ public class GameServer extends Listener {
                 data.tradingResources = tmp_array;
             }
 
+            if (playerPacket.updateCard) {
+                data.DrawDev();
+                data.isCardUpToDate = true;
+            }
+
             //Checks if the received packet boolean is true.
             if (playerPacket.nsTextSent) {
                 //Updates the messages in the chat

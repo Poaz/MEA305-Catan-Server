@@ -33,6 +33,7 @@ public class ServerData {
     public int[] rolledDiceStatistics = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
     public int[] tradingResources = new int[10];
     public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false, false};
+    public boolean isCardUpToDate;
 
 
 
@@ -47,6 +48,7 @@ public class ServerData {
             "Desert"));
 
     public ServerData() {
+        DevCard();
     }
 
     public void TurnOrder() {
@@ -115,6 +117,7 @@ public class ServerData {
     }
 
     public void DevCard() {
+        System.out.println("Shuffling deck");
         for (int i = 0; i < 13; i++) {
             cards.add(1); //Knight cards x 14
         }

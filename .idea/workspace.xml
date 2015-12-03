@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae1b3ad-9e5b-4b3f-8ba9-a5d79d3e4f32" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/GameServer.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/GameServer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ServerData.class" afterPath="$PROJECT_DIR$/out/production/MEA305AWESOMESHITPROJECT-Server/com/company/ServerData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ClientData.java" afterPath="$PROJECT_DIR$/src/com/company/ClientData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/GameServer.java" afterPath="$PROJECT_DIR$/src/com/company/GameServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ServerData.java" afterPath="$PROJECT_DIR$/src/com/company/ServerData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MEA305AWESOMESHITPROJECT-Server.iws" />
@@ -32,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/GameServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
               <folding>
                 <element signature="method#update#0;class#GameServer#0" expanded="false" />
               </folding>
@@ -43,10 +48,11 @@
       <file leaf-file-name="ServerData.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/ServerData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71981776">
-              <caret line="135" column="26" selection-start-line="135" selection-start-column="26" selection-end-line="135" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.9681093">
+              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
               <folding>
-                <element signature="method#ServerData#0;class#ServerData#0" expanded="false" />
+                <element signature="e#2135#2136#0" expanded="true" />
+                <element signature="e#2160#2161#0" expanded="true" />
                 <element signature="method#TurnOrder#0;class#ServerData#0" expanded="false" />
                 <element signature="method#roll#0;class#ServerData#0" expanded="false" />
                 <element signature="method#ShuffleMap#0;class#ServerData#0" expanded="false" />
@@ -62,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/ClientData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -612,13 +618,7 @@
       <workItem from="1449043702000" duration="620000" />
       <workItem from="1449044334284" duration="3621000" />
       <workItem from="1449052894312" duration="2557000" />
-      <workItem from="1449066524384" duration="2335000" />
-    </task>
-    <task id="LOCAL-00003" summary="not much new">
-      <created>1446457817442</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1446457817442</updated>
+      <workItem from="1449066524384" duration="4545000" />
     </task>
     <task id="LOCAL-00004" summary="not much new">
       <created>1446464054431</created>
@@ -908,11 +908,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449066766837</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added stuff">
+      <created>1449130074756</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1449130074757</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159806000" />
+    <option name="totallyTimeSpent" value="162016000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -936,7 +942,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1044,7 +1050,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
           <folding>
-            <element signature="method#ServerData#0;class#ServerData#0" expanded="false" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2160#2161#0" expanded="true" />
             <element signature="method#TurnOrder#0;class#ServerData#0" expanded="false" />
             <element signature="method#roll#0;class#ServerData#0" expanded="false" />
             <element signature="method#ShuffleMap#0;class#ServerData#0" expanded="false" />
@@ -1080,7 +1087,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
           <folding>
-            <element signature="method#ServerData#0;class#ServerData#0" expanded="false" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2160#2161#0" expanded="true" />
             <element signature="method#TurnOrder#0;class#ServerData#0" expanded="false" />
             <element signature="method#roll#0;class#ServerData#0" expanded="false" />
             <element signature="method#ShuffleMap#0;class#ServerData#0" expanded="false" />
@@ -1448,16 +1456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/GameServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="method#update#0;class#GameServer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/GuiServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1473,17 +1471,28 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/ClientData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/GameServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+          <folding>
+            <element signature="method#update#0;class#GameServer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ServerData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71981776">
-          <caret line="135" column="26" selection-start-line="135" selection-start-column="26" selection-end-line="135" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.9681093">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
           <folding>
-            <element signature="method#ServerData#0;class#ServerData#0" expanded="false" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2160#2161#0" expanded="true" />
             <element signature="method#TurnOrder#0;class#ServerData#0" expanded="false" />
             <element signature="method#roll#0;class#ServerData#0" expanded="false" />
             <element signature="method#ShuffleMap#0;class#ServerData#0" expanded="false" />
