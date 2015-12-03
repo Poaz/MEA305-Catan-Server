@@ -8,6 +8,7 @@ import java.util.Collections;
 
 public class ServerData {
 
+    //Variables for all clients, this is the variables that controls the clients data, and state of the game.
     public String[] names = new String[]{"", "", "", ""};
     public int[] points = new int[]{0, 0, 0, 0};
     public int[] knightsPlayed = new int[]{0, 0, 0, 0};
@@ -21,12 +22,20 @@ public class ServerData {
     public ArrayList<Integer> cards = new ArrayList<Integer>();
     public int[] serializedHouse = new int[]{0,0};
     public int[] serializedRoad = new int[] {0,0};
+    public int serializedCity = 0;
     public boolean endTurn = false, diceRoll;
+    public boolean diceUsed = true;
     public int turnorderturn = 1;
     public boolean gameEnded = false;
     public boolean[] playerturn = new boolean[]{false, false, false, false};
     public Connection c;
     boolean first = true;
+    public int[] rolledDiceStatistics = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
+    public int[] tradingResources = new int[10];
+    public boolean[] tradingWithyou = new boolean[] {false, false, false, false, false};
+    public boolean tradeHandled = true;
+    public boolean tradeAccepted, tradingComplete;
+
 
 
     Integer[] yieldNumbers = {2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12};
@@ -44,58 +53,68 @@ public class ServerData {
 
     public void TurnOrder() {
 
-            if (turnorderturn == 1 && gameStart && first) {
-                playerturn[2] = false;
-                playerturn[3] = true;
-                first = false;
-            }
-             if(turnorderturn == 1) {
+        if (turnorderturn == 1 && gameStart && first) {
+
+            playerturn[2] = false;
+            playerturn[3] = true;
+            turn = 3;
+            first = false;
+        }
+        if (turnorderturn == 1) {
             if (endTurn && playerturn[3]) {
                 playerturn[2] = true;
                 playerturn[3] = false;
+                turn = 2;
                 endTurn = false;
             }
             if (endTurn && playerturn[2]) {
                 playerturn[1] = true;
                 playerturn[2] = false;
+                turn = 1;
                 endTurn = false;
             }
             if (endTurn && playerturn[1]) {
                 playerturn[0] = true;
                 playerturn[1] = false;
+                turn = 0;
                 endTurn = false;
             }
             if (endTurn && playerturn[0]) {
                 playerturn[0] = true;
+                turn = 0;
                 endTurn = false;
                 turnorderturn++;
             }
         }
 
-            if (turnorderturn == 2) {
-                    if(endTurn && playerturn[0]){
-                        playerturn[0] = false;
-                        playerturn[1] = true;
-                        endTurn = false;
-                    }
+        if (turnorderturn == 2) {
+            if (endTurn && playerturn[0]) {
+                playerturn[0] = false;
+                playerturn[1] = true;
+                turn = 1;
+                endTurn = false;
+            }
 
-                    if (endTurn && playerturn[1]) {
-                        playerturn[1] = false;
-                        playerturn[2] = true;
-                        endTurn = false;
-                    }
-                    if (endTurn && playerturn[2]) {
-                        playerturn[2] = false;
-                        playerturn[3] = true;
-                        endTurn = false;
-                    }
-                    if (endTurn && playerturn[3]) {
-                        playerturn[0] = true;
-                        playerturn[3] = false;
-                        endTurn = false;
-                    }
+            if (endTurn && playerturn[1]) {
+                playerturn[1] = false;
+                playerturn[2] = true;
+                turn = 2;
+                endTurn = false;
+            }
+            if (endTurn && playerturn[2]) {
+                playerturn[2] = false;
+                playerturn[3] = true;
+                turn = 3;
+                endTurn = false;
+            }
+            if (endTurn && playerturn[3]) {
+                playerturn[0] = true;
+                turn = 0;
+                playerturn[3] = false;
+                endTurn = false;
             }
         }
+    }
 
     public void DevCard() {
         for (int i = 0; i < 13; i++) {
@@ -125,6 +144,7 @@ public class ServerData {
 
         die1 = (int) (Math.random() * 6) + 1;
         die2 = (int) (Math.random() * 6) + 1;
+        rolledDiceStatistics[die1+die2-1]++;
     }
 
     public void ShuffleMap() {
@@ -164,6 +184,10 @@ public class ServerData {
             oldText[1] = textToRender[1];
             oldText[0] = textToRender[2];
         }
+    }
+
+    public void trade(){
+
     }
 
     public String[] getNames() {
