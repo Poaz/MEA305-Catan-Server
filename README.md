@@ -1,0 +1,4 @@
+# MEA305AWESOMESHITPROJECT-Server
+Open
+play
+enjoy
