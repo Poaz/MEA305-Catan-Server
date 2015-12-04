@@ -1,6 +1,7 @@
 package com.company;
 
 
+//this is the data we receive from the client. we Use it to set our server to the same under "ServerData"
 public class ClientData {
     public String nsname;
     public int nspoint;
@@ -22,6 +23,7 @@ public class ClientData {
     public int targetPlayerTrade;
     public boolean updateCard;
 
+    //constructor
     public ClientData() {
     }
 }

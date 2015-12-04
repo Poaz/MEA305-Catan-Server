@@ -21,9 +21,10 @@ public class GameServer extends Listener {
     private boolean GameStarted = true;
     private boolean firstJoin = true;
 
-
+    //constructor
     GameServer() {
     }
+
 
     public static void main(String[] args) throws IOException {
         //Initialize the server
@@ -99,6 +100,8 @@ public class GameServer extends Listener {
             data.serializedRoad = playerPacket.serializedRoad;
             //City
             data.serializedCity = playerPacket.serializedCity;
+            //thief
+            data.serializedThief = playerPacket.serializedThief;
             //Sets the end turn boolean
             data.endTurn = playerPacket.endTurn;
 
@@ -180,6 +183,7 @@ public class GameServer extends Listener {
         System.out.println(c.getID());
     }
 
+    //updates the GUI created to keep track of server data
     public void update() {
         GUI.update(data.names, data.points, data.knightsPlayed, data.resourcesOnHand, data.longestRoad, data.playerturn);
         GUI.repaint();
