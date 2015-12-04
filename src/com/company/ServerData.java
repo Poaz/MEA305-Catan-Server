@@ -29,7 +29,7 @@ public class ServerData {
     public boolean diceUsed = true;
     public int turnorderturn = 1;
     public boolean gameEnded = false;
-    public boolean[] playerturn = new boolean[]{true, false, false, false};
+    public boolean[] playerturn = new boolean[]{false, false, false, false};
     public Connection c;
     boolean first = true;
     public int[] rolledDiceStatistics = new int[]{0,0,0,0,0,0,0,0,0,0,0,0};
