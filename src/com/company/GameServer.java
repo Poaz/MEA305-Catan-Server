@@ -129,6 +129,8 @@ public class GameServer extends Listener {
                 System.out.println("Sending development card: " + data.cardID);
                 data.isCardUpToDate = true;
                 playerPacket.updateCard = false;
+            } else {
+                data.isCardUpToDate =  false;
             }
 
 
